@@ -38,6 +38,4 @@
 @property (nonatomic, assign) GLfloat   GLtubeLiquidTopGlowL;
 @property (nonatomic, assign) CGRect    GLtubeGLKViewFrame;
 
-+ (instancetype)sharedInstance;
-
 @end

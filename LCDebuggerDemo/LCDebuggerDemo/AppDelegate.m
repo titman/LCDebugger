@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LCCMD.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    [LCCMD addClassCMD:@"application" CMDType:LC_CMD_TYPE_SEE IMPClass:[self class] CMDDescription:@"test"];
+    
+    
     return YES;
+}
+
++(NSString *)CMDSee:(NSString *)cmd
+{
+    return @"我被调用！输入在屏幕上！";
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

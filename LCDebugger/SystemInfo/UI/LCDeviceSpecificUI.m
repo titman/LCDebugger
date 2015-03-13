@@ -10,6 +10,7 @@
 //
 
 
+#import "LCDebuggerImport.h"
 #import "LCDeviceSpecificUI.h"
 #import "LCLog.h"
 #import "LCUtils.h"
@@ -41,21 +42,12 @@
 @synthesize GLtubeLiquidTopGlowL;
 @synthesize GLtubeGLKViewFrame;
 
-+ (instancetype)sharedInstance
-{
-    static id sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self class] new];
-    });
-    return sharedInstance;
-}
 
 - (id)init
 {
     if (self = [super init])
     {
-        LCDeviceInfo *deviceInfo = [LCDeviceInfoController sharedInstance].getDeviceInfo;
+        LCDeviceInfo *deviceInfo = LCDeviceInfoController.LCS.getDeviceInfo;
         LCAssert(deviceInfo != nil, @"deviceInfo == nil");
         
         

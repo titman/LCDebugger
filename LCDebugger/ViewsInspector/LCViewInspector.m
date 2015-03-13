@@ -10,6 +10,7 @@
 
 #import "LCViewInspector.h"
 #import "LCDebuggerView.h"
+#import "UIWindow+LCUIWindowHook.h"
 
 #define D2R( __degree ) (M_PI / 180.0f * __degree)
 
@@ -286,7 +287,7 @@
     
 	for ( UIView * subview in view.subviews )
 	{
-        if (![subview isKindOfClass:[LCViewInspector class]] && ![subview isKindOfClass:[LCDebuggerView class]]) {
+        if (![subview isKindOfClass:[LCViewInspector class]] && ![subview isKindOfClass:[LCDebuggerView class]] && ![subview isKindOfClass:[LCWindowHookBorder class]]) {
             [self buildSublayersFor:subview depth:(depth + 1 + [view.subviews indexOfObject:subview] * 0.025f) origin:layer.rect.origin];
         }
 	}

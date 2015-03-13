@@ -26,9 +26,8 @@ static LCDebugger * touch = nil;
 -(void) test
 {
     if (!touch) {
-        touch = [[LCDebugger alloc] init];
+        touch = [LCDebugger sharedInstance];
     }
-
 }
 
 @end

@@ -32,6 +32,21 @@
 		BF63CFDD1AB14F82000343FF /* LCDeviceSpecificUI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFDC1AB14F82000343FF /* LCDeviceSpecificUI.m */; };
 		BF63CFE31AB15DC5000343FF /* LCDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFE01AB15DC5000343FF /* LCDeviceInfo.m */; };
 		BF63CFE41AB15DC5000343FF /* LCDeviceInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFE21AB15DC5000343FF /* LCDeviceInfoController.m */; };
+		BFA64A8D1AB2A926004139B6 /* UIView+LCUIViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A8C1AB2A926004139B6 /* UIView+LCUIViewFrame.m */; };
+		BFA64A901AB2A967004139B6 /* UIView+LCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A8F1AB2A967004139B6 /* UIView+LCExtension.m */; };
+		BFA64A931AB2A979004139B6 /* UIView+LCGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A921AB2A979004139B6 /* UIView+LCGesture.m */; };
+		BFA64A961AB2A9CB004139B6 /* NSObject+LCFastSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A951AB2A9CB004139B6 /* NSObject+LCFastSingleton.m */; };
+		BFA64A9D1AB2B4F2004139B6 /* LCLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A9C1AB2B4F2004139B6 /* LCLogView.m */; };
+		BFA64AA11AB2BB40004139B6 /* LOGO.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFA64AA01AB2BB40004139B6 /* LOGO.txt */; };
+		BFA64AA41AB2C278004139B6 /* LCGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AA31AB2C278004139B6 /* LCGCD.m */; };
+		BFA64AB01AB2C5FF004139B6 /* LCCMD.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AAD1AB2C5FF004139B6 /* LCCMD.m */; };
+		BFA64AB11AB2C5FF004139B6 /* LCCMDInput.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AAF1AB2C5FF004139B6 /* LCCMDInput.m */; };
+		BFA64AB71AB2D3A3004139B6 /* LCUIKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AB61AB2D3A3004139B6 /* LCUIKeyBoard.m */; };
+		BFA64ABA1AB2E6A2004139B6 /* LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AB91AB2E6A2004139B6 /* LCActionSheet.m */; };
+		BFA64ABD1AB2F128004139B6 /* LCDeviceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64ABC1AB2F128004139B6 /* LCDeviceTableView.m */; };
+		BFA64AC31AB3007F004139B6 /* LCProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AC01AB3007F004139B6 /* LCProcessInfo.m */; };
+		BFA64AC41AB3007F004139B6 /* LCProcessInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AC21AB3007F004139B6 /* LCProcessInfoController.m */; };
+		BFA64AC71AB30172004139B6 /* LCProgressTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64AC61AB30172004139B6 /* LCProgressTableView.m */; };
 		BFBFBD161AAF0BB400854A11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBFBD151AAF0BB400854A11 /* main.m */; };
 		BFBFBD191AAF0BB400854A11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBFBD181AAF0BB400854A11 /* AppDelegate.m */; };
 		BFBFBD1C1AAF0BB400854A11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBFBD1B1AAF0BB400854A11 /* ViewController.m */; };
@@ -101,6 +116,37 @@
 		BF63CFE01AB15DC5000343FF /* LCDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDeviceInfo.m; sourceTree = "<group>"; };
 		BF63CFE11AB15DC5000343FF /* LCDeviceInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDeviceInfoController.h; sourceTree = "<group>"; };
 		BF63CFE21AB15DC5000343FF /* LCDeviceInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDeviceInfoController.m; sourceTree = "<group>"; };
+		BFA64A8B1AB2A926004139B6 /* UIView+LCUIViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LCUIViewFrame.h"; sourceTree = "<group>"; };
+		BFA64A8C1AB2A926004139B6 /* UIView+LCUIViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCUIViewFrame.m"; sourceTree = "<group>"; };
+		BFA64A8E1AB2A967004139B6 /* UIView+LCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LCExtension.h"; sourceTree = "<group>"; };
+		BFA64A8F1AB2A967004139B6 /* UIView+LCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCExtension.m"; sourceTree = "<group>"; };
+		BFA64A911AB2A979004139B6 /* UIView+LCGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LCGesture.h"; sourceTree = "<group>"; };
+		BFA64A921AB2A979004139B6 /* UIView+LCGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCGesture.m"; sourceTree = "<group>"; };
+		BFA64A941AB2A9CB004139B6 /* NSObject+LCFastSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LCFastSingleton.h"; sourceTree = "<group>"; };
+		BFA64A951AB2A9CB004139B6 /* NSObject+LCFastSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LCFastSingleton.m"; sourceTree = "<group>"; };
+		BFA64A971AB2AC4A004139B6 /* LCDebuggerImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDebuggerImport.h; sourceTree = "<group>"; };
+		BFA64A9A1AB2AE12004139B6 /* LCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTools.h; sourceTree = "<group>"; };
+		BFA64A9B1AB2B4F2004139B6 /* LCLogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLogView.h; sourceTree = "<group>"; };
+		BFA64A9C1AB2B4F2004139B6 /* LCLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLogView.m; sourceTree = "<group>"; };
+		BFA64AA01AB2BB40004139B6 /* LOGO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LOGO.txt; sourceTree = "<group>"; };
+		BFA64AA21AB2C278004139B6 /* LCGCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCGCD.h; sourceTree = "<group>"; };
+		BFA64AA31AB2C278004139B6 /* LCGCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCGCD.m; sourceTree = "<group>"; };
+		BFA64AAC1AB2C5FF004139B6 /* LCCMD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCMD.h; sourceTree = "<group>"; };
+		BFA64AAD1AB2C5FF004139B6 /* LCCMD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCMD.m; sourceTree = "<group>"; };
+		BFA64AAE1AB2C5FF004139B6 /* LCCMDInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCMDInput.h; sourceTree = "<group>"; };
+		BFA64AAF1AB2C5FF004139B6 /* LCCMDInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCMDInput.m; sourceTree = "<group>"; };
+		BFA64AB51AB2D3A3004139B6 /* LCUIKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUIKeyBoard.h; sourceTree = "<group>"; };
+		BFA64AB61AB2D3A3004139B6 /* LCUIKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUIKeyBoard.m; sourceTree = "<group>"; };
+		BFA64AB81AB2E6A2004139B6 /* LCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheet.h; sourceTree = "<group>"; };
+		BFA64AB91AB2E6A2004139B6 /* LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionSheet.m; sourceTree = "<group>"; };
+		BFA64ABB1AB2F128004139B6 /* LCDeviceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDeviceTableView.h; sourceTree = "<group>"; };
+		BFA64ABC1AB2F128004139B6 /* LCDeviceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDeviceTableView.m; sourceTree = "<group>"; };
+		BFA64ABF1AB3007F004139B6 /* LCProcessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCProcessInfo.h; sourceTree = "<group>"; };
+		BFA64AC01AB3007F004139B6 /* LCProcessInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProcessInfo.m; sourceTree = "<group>"; };
+		BFA64AC11AB3007F004139B6 /* LCProcessInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCProcessInfoController.h; sourceTree = "<group>"; };
+		BFA64AC21AB3007F004139B6 /* LCProcessInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProcessInfoController.m; sourceTree = "<group>"; };
+		BFA64AC51AB30172004139B6 /* LCProgressTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCProgressTableView.h; sourceTree = "<group>"; };
+		BFA64AC61AB30172004139B6 /* LCProgressTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProgressTableView.m; sourceTree = "<group>"; };
 		BFBFBD101AAF0BB400854A11 /* LCDebuggerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCDebuggerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBFBD141AAF0BB400854A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFBFBD151AAF0BB400854A11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,6 +185,14 @@
 		BF63CF891AB14256000343FF /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BFA64A941AB2A9CB004139B6 /* NSObject+LCFastSingleton.h */,
+				BFA64A951AB2A9CB004139B6 /* NSObject+LCFastSingleton.m */,
+				BFA64A911AB2A979004139B6 /* UIView+LCGesture.h */,
+				BFA64A921AB2A979004139B6 /* UIView+LCGesture.m */,
+				BFA64A8E1AB2A967004139B6 /* UIView+LCExtension.h */,
+				BFA64A8F1AB2A967004139B6 /* UIView+LCExtension.m */,
+				BFA64A8B1AB2A926004139B6 /* UIView+LCUIViewFrame.h */,
+				BFA64A8C1AB2A926004139B6 /* UIView+LCUIViewFrame.m */,
 				BF63CF8A1AB14256000343FF /* UIWindow+LCUIWindowHook.h */,
 				BF63CF8B1AB14256000343FF /* UIWindow+LCUIWindowHook.m */,
 			);
@@ -150,6 +204,8 @@
 			children = (
 				BF63CF8D1AB14256000343FF /* LCDebuggerView.h */,
 				BF63CF8E1AB14256000343FF /* LCDebuggerView.m */,
+				BFA64AB81AB2E6A2004139B6 /* LCActionSheet.h */,
+				BFA64AB91AB2E6A2004139B6 /* LCActionSheet.m */,
 			);
 			path = Debugger;
 			sourceTree = "<group>";
@@ -159,6 +215,8 @@
 			children = (
 				BF63CF901AB14256000343FF /* LCLog.h */,
 				BF63CF911AB14256000343FF /* LCLog.mm */,
+				BFA64A9B1AB2B4F2004139B6 /* LCLogView.h */,
+				BFA64A9C1AB2B4F2004139B6 /* LCLogView.m */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -166,6 +224,7 @@
 		BF63CF921AB14256000343FF /* SystemInfo */ = {
 			isa = PBXGroup;
 			children = (
+				BFA64ABE1AB30076004139B6 /* Process */,
 				BF63CFDE1AB15DBD000343FF /* Device */,
 				BF63CFDA1AB14F82000343FF /* UI */,
 				BF63CFBC1AB14A9D000343FF /* GL */,
@@ -271,8 +330,46 @@
 				BF63CFE01AB15DC5000343FF /* LCDeviceInfo.m */,
 				BF63CFE11AB15DC5000343FF /* LCDeviceInfoController.h */,
 				BF63CFE21AB15DC5000343FF /* LCDeviceInfoController.m */,
+				BFA64ABB1AB2F128004139B6 /* LCDeviceTableView.h */,
+				BFA64ABC1AB2F128004139B6 /* LCDeviceTableView.m */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		BFA64A8A1AB2A882004139B6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BFA64A9A1AB2AE12004139B6 /* LCTools.h */,
+				BFA64AA21AB2C278004139B6 /* LCGCD.h */,
+				BFA64AA31AB2C278004139B6 /* LCGCD.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		BFA64AAB1AB2C5C5004139B6 /* CMD */ = {
+			isa = PBXGroup;
+			children = (
+				BFA64AAC1AB2C5FF004139B6 /* LCCMD.h */,
+				BFA64AAD1AB2C5FF004139B6 /* LCCMD.m */,
+				BFA64AAE1AB2C5FF004139B6 /* LCCMDInput.h */,
+				BFA64AAF1AB2C5FF004139B6 /* LCCMDInput.m */,
+				BFA64AB51AB2D3A3004139B6 /* LCUIKeyBoard.h */,
+				BFA64AB61AB2D3A3004139B6 /* LCUIKeyBoard.m */,
+			);
+			path = CMD;
+			sourceTree = "<group>";
+		};
+		BFA64ABE1AB30076004139B6 /* Process */ = {
+			isa = PBXGroup;
+			children = (
+				BFA64ABF1AB3007F004139B6 /* LCProcessInfo.h */,
+				BFA64AC01AB3007F004139B6 /* LCProcessInfo.m */,
+				BFA64AC11AB3007F004139B6 /* LCProcessInfoController.h */,
+				BFA64AC21AB3007F004139B6 /* LCProcessInfoController.m */,
+				BFA64AC51AB30172004139B6 /* LCProgressTableView.h */,
+				BFA64AC61AB30172004139B6 /* LCProgressTableView.m */,
+			);
+			path = Process;
 			sourceTree = "<group>";
 		};
 		BFBFBD071AAF0BB400854A11 = {
@@ -338,13 +435,17 @@
 		BFBFBD391AAF0BC100854A11 /* LCDebugger */ = {
 			isa = PBXGroup;
 			children = (
+				BFA64A8A1AB2A882004139B6 /* Tools */,
 				BF63CF891AB14256000343FF /* Category */,
 				BF63CF8C1AB14256000343FF /* Debugger */,
 				BF63CF8F1AB14256000343FF /* Log */,
+				BFA64AAB1AB2C5C5004139B6 /* CMD */,
 				BF63CF921AB14256000343FF /* SystemInfo */,
 				BF63CF991AB14256000343FF /* ViewsInspector */,
 				BFBFBD581AB027B700854A11 /* LCDebugger.h */,
 				BFBFBD591AB027B700854A11 /* LCDebugger.m */,
+				BFA64AA01AB2BB40004139B6 /* LOGO.txt */,
+				BFA64A971AB2AC4A004139B6 /* LCDebuggerImport.h */,
 			);
 			name = LCDebugger;
 			path = ../../LCDebugger;
@@ -435,6 +536,7 @@
 				BFBFBD241AAF0BB400854A11 /* LaunchScreen.xib in Resources */,
 				BFBFBD211AAF0BB400854A11 /* Images.xcassets in Resources */,
 				BF63CFD41AB14B0D000343FF /* LCGLBubbleEffect.vsh in Resources */,
+				BFA64AA11AB2BB40004139B6 /* LOGO.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,22 +555,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBFBD1C1AAF0BB400854A11 /* ViewController.m in Sources */,
+				BFA64AC41AB3007F004139B6 /* LCProcessInfoController.m in Sources */,
 				BF63CFE31AB15DC5000343FF /* LCDeviceInfo.m in Sources */,
 				BF63CFA21AB14256000343FF /* LCViewInspector.m in Sources */,
 				BF63CFAF1AB142DA000343FF /* LCCPULoadFilter.m in Sources */,
+				BFA64AA41AB2C278004139B6 /* LCGCD.m in Sources */,
+				BFA64A8D1AB2A926004139B6 /* UIView+LCUIViewFrame.m in Sources */,
 				BF63CFB51AB144A9000343FF /* LCUtils.m in Sources */,
+				BFA64AB71AB2D3A3004139B6 /* LCUIKeyBoard.m in Sources */,
 				BF63CFAD1AB142DA000343FF /* LCCPUInfoController.m in Sources */,
 				BF63CFB81AB1457F000343FF /* LCDevice.m in Sources */,
+				BFA64A901AB2A967004139B6 /* UIView+LCExtension.m in Sources */,
+				BFA64AC71AB30172004139B6 /* LCProgressTableView.m in Sources */,
+				BFA64A931AB2A979004139B6 /* UIView+LCGesture.m in Sources */,
+				BFA64AB01AB2C5FF004139B6 /* LCCMD.m in Sources */,
 				BF63CFA11AB14256000343FF /* LCSystemInfo.m in Sources */,
+				BFA64AC31AB3007F004139B6 /* LCProcessInfo.m in Sources */,
+				BFA64ABA1AB2E6A2004139B6 /* LCActionSheet.m in Sources */,
 				BF63CFA01AB14256000343FF /* LCNetworkTraffic.m in Sources */,
+				BFA64ABD1AB2F128004139B6 /* LCDeviceTableView.m in Sources */,
 				BF63CFAE1AB142DA000343FF /* LCCPULoad.m in Sources */,
 				BF63CFBB1AB14A4B000343FF /* LCCPUTableView.m in Sources */,
 				BFBFBD5A1AB027B700854A11 /* LCDebugger.m in Sources */,
 				BFBFBD191AAF0BB400854A11 /* AppDelegate.m in Sources */,
 				BF63CFD01AB14B0D000343FF /* LCGLDataLine.m in Sources */,
 				BF63CF9C1AB14256000343FF /* UIWindow+LCUIWindowHook.m in Sources */,
+				BFA64A9D1AB2B4F2004139B6 /* LCLogView.m in Sources */,
+				BFA64AB11AB2C5FF004139B6 /* LCCMDInput.m in Sources */,
 				BF63CFD51AB14B0D000343FF /* LCGLTube.m in Sources */,
 				BF63CFB21AB143F1000343FF /* LCHardcodedDeviceData.m in Sources */,
+				BFA64A961AB2A9CB004139B6 /* NSObject+LCFastSingleton.m in Sources */,
 				BF63CFD31AB14B0D000343FF /* LCGLBubbleEffect.m in Sources */,
 				BF63CF9D1AB14256000343FF /* LCDebuggerView.m in Sources */,
 				BF63CFAC1AB142DA000343FF /* LCCPUInfo.m in Sources */,
@@ -537,6 +653,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -578,6 +695,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
