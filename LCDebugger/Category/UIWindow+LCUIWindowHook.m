@@ -56,11 +56,6 @@
 
 @end
 
-@interface LCWindowHookBorder : UIView
-
-- (void)startAnimation;
-
-@end
 
 @implementation LCWindowHookBorder
 

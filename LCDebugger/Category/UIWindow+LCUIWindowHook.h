@@ -13,3 +13,12 @@
 + (void)hook;
 
 @end
+
+
+
+
+@interface LCWindowHookBorder : UIView
+
+- (void)startAnimation;
+
+@end
