@@ -10,13 +10,14 @@
 //
 
 
+#import "LCDebuggerImport.h"
 #import "LCUtils.h"
 #import "LCHardcodedDeviceData.h"
 #import "LCDeviceInfoController.h"
 #import "LCCPUInfoController.h"
 #import "LCDeviceInfo.h"
 #import "LCCPUInfo.h"
-//#import "GPUInfo.h"
+#import "LCProcessInfoController.h"
 #import "LCDevice.h"
 
 @interface LCDevice()
@@ -24,7 +25,7 @@
 @property (nonatomic, strong) LCDeviceInfo     *deviceInfo;
 @property (nonatomic, strong) LCCPUInfo        *cpuInfo;
 //@property (nonatomic, strong) GPUInfo        *gpuInfo;
-//@property (nonatomic, copy)   NSArray        *processes;
+@property (nonatomic, copy)   NSArray        *processes;
 //@property (nonatomic, strong) RAMInfo        *ramInfo;
 //@property (nonatomic, strong) NetworkInfo    *networkInfo;
 //@property (nonatomic, strong) StorageInfo    *storageInfo;
@@ -35,21 +36,11 @@
 @synthesize deviceInfo;
 @synthesize cpuInfo;
 //@synthesize gpuInfo;
-//@synthesize processes;
+@synthesize processes;
 //@synthesize ramInfo;
 //@synthesize networkInfo;
 //@synthesize storageInfo;
 //@synthesize batteryInfo;
-
-+ (instancetype)sharedInstance
-{
-    static id sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self class] new];
-    });
-    return sharedInstance;
-}
 
 - (id)init
 {
@@ -62,10 +53,10 @@
         [hardcodeData setHwMachine:hwMachine];
         
 //        AppDelegate *app = [AppDelegate sharedDelegate];
-        deviceInfo = [[LCDeviceInfoController sharedInstance] getDeviceInfo];
-        cpuInfo = [[LCCPUInfoController sharedInstance] getCPUInfo];
+        deviceInfo = [LCDeviceInfoController.LCS getDeviceInfo];
+        cpuInfo = [LCCPUInfoController.LCS getCPUInfo];
 //        gpuInfo = [app.gpuInfoCtrl getGPUInfo];
-//        processes = [app.processInfoCtrl getProcesses];
+        processes = [LCProcessInfoController.LCS getProcesses];
 //        ramInfo = [app.ramInfoCtrl getRAMInfo];
 //        networkInfo = [app.networkInfoCtrl getNetworkInfo];
 //        storageInfo = [app.storageInfoCtrl getStorageInfo];
@@ -84,18 +75,17 @@
     return cpuInfo;
 }
 
-//- (NSArray*)getProcesses
-//{
-//    return processes;
-//}
+- (NSArray*)getProcesses
+{
+    return processes;
+}
 
 #pragma mark - public
 
-//- (void)refreshProcesses
-//{
-//    AppDelegate *app = [AppDelegate sharedDelegate];
-//    processes = [app.processInfoCtrl getProcesses];
-//}
+- (void)refreshProcesses
+{
+    processes = [LCProcessInfoController.LCS getProcesses];
+}
 //
 //- (void)refreshStorageInfo
 //{

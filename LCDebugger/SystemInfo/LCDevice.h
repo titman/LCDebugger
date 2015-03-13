@@ -28,15 +28,13 @@
 @property (nonatomic, strong, readonly) LCDeviceInfo     *deviceInfo;
 @property (nonatomic, strong, readonly) LCCPUInfo        *cpuInfo;
 //@property (nonatomic, strong, readonly) GPUInfo        *gpuInfo;
-//@property (nonatomic, copy, readonly)   NSArray        *processes;
+@property (nonatomic, copy, readonly)   NSArray        *processes;
 //@property (nonatomic, strong, readonly) RAMInfo        *ramInfo;
 //@property (nonatomic, strong, readonly) NetworkInfo    *networkInfo;
 //@property (nonatomic, strong, readonly) StorageInfo    *storageInfo;
 //@property (nonatomic, strong, readonly) BatteryInfo    *batteryInfo;
 
-//- (void)refreshProcesses;
+- (void)refreshProcesses;
 //- (void)refreshStorageInfo;
-
-+ (instancetype)sharedInstance;
 
 @end

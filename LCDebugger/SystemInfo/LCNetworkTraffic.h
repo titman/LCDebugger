@@ -26,8 +26,6 @@ struct LCNetworkTrafficValues
 
 @property(nonatomic,assign, readonly) NSString * allTraffic;
 
-+ (instancetype)sharedInstance;
-
 - (void)calcChanges;
 - (void)resetChanges;
 
