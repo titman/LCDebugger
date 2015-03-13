@@ -6,16 +6,26 @@
 //  Copyright (c) 2015年 Licheng Guo . http://nsobject.me/. All rights reserved.
 //
 
+#import "LCDebuggerImport.h"
 #import "LCDebuggerView.h"
 #import "LCViewInspector.h"
 #import "LCSystemInfo.h"
 #import "LCNetworkTraffic.h"
 #import "UIWindow+LCUIWindowHook.h"
 #import "LCCPUTableView.h"
+#import "LCLogView.h"
+#import "LCActionSheet.h"
+#import "LCDeviceTableView.h"
+#import "LCProgressTableView.h"
 
 typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
 @interface __LCDebuggerLog : UIView
+
+@property(nonatomic,strong) UILabel * backView;
+@property(nonatomic,strong) UIView * currentView;
+
+@property(nonatomic,strong) LCLogView * logView;
 
 @property(nonatomic,copy) __LCDebuggerLogButtonDidTap didTapButton;
 
@@ -27,7 +37,8 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 {
     if (self = [super init]) {
         
-        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
+        self.viewFrameWidth = LC_DEVICE_WIDTH;
+        self.viewFrameHeight = LC_DEVICE_HEIGHT - 64;
         
         [self buildUI];
     }
@@ -38,28 +49,106 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 -(void) buildUI
 {
     CGFloat inv = 10;
-    CGFloat width = (self.frame.size.width - (inv * 5)) / 4;
-    NSArray * titles = @[@"System Info",@"Skeleton",@"Crash Report",@"CMD Input"];
+    NSArray * titles = @[@"System Info",@"Skeleton",@"Crash Report",@"HTTP Backstage"];
+    CGFloat width = (self.viewFrameWidth - (inv * (titles.count + 1))) / titles.count;
     
-    for (NSInteger i = 0; i< 4; i++) {
+    for (NSInteger i = 0; i< titles.count; i++) {
         
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(inv * (i + 1) + width * i, 0, width, 30)];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        UIButton * button = UIButton.view;
+        button.viewFrameX = inv * (i + 1) + width * i;
+        button.viewFrameWidth = width;
+        button.viewFrameHeight = 30;
         button.titleLabel.font = [UIFont systemFontOfSize:10];
         button.backgroundColor = [UIColor clearColor];
         button.layer.cornerRadius = 6.0f;
         button.layer.borderColor = [UIColor whiteColor].CGColor;
         button.layer.borderWidth = 1.0f;
-        [button setTitle:titles[i] forState:UIControlStateNormal];
+        button.titleLabel.adjustsFontSizeToFitWidth = YES;
         button.tag = i;
+        
+        [button setTitle:titles[i] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:button];
+        self.ADD(button);
     }
     
-    LCCPUTableView * tableView = [[LCCPUTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
-    [self addSubview:tableView];
+    self.logView = [[LCLogView alloc] initWithFrame:LC_RECT(0, 40, self.viewFrameWidth, self.viewFrameHeight - 40)];
+    self.ADD(self.logView);
+}
+
+-(void) changedCurrentView:(UIView *)view title:(NSString *)title
+{
+    [self back];
     
-    [tableView show];
+    self.backView.alpha = 1;
+    self.backView.text = title;
+    
+    view.viewFrameY = self.backView.viewBottomY;
+    view.viewFrameWidth = self.viewFrameWidth;
+    view.viewFrameHeight = self.viewFrameHeight - view.viewFrameY;
+    
+    view.alpha = 0;
+    self.ADD(view);
+
+    LC_FAST_ANIMATIONS_F(0.2, ^{
+        
+        view.alpha = 1;
+        self.logView.alpha = 0;
+        
+    }, ^(BOOL finished){
+        
+        self.currentView = view;
+    });
+    
+}
+
+-(UIView *) backView
+{
+    if (!_backView) {
+        
+        _backView = UILabel.view;
+        _backView.viewFrameY = 40;
+        _backView.viewFrameWidth = LC_DEVICE_WIDTH;
+        _backView.viewFrameHeight = 30;
+        _backView.font = [UIFont systemFontOfSize:14];
+        _backView.alpha = 0;
+        _backView.textColor = [UIColor whiteColor];
+        _backView.textAlignment = NSTextAlignmentCenter;
+        _backView.userInteractionEnabled = YES;
+        [_backView addTapTarget:self selector:@selector(back)];
+        self.ADD(_backView);
+
+        
+        UILabel * backButton = UILabel.view;
+        backButton.viewFrameX = 10;
+        backButton.viewFrameWidth = 44;
+        backButton.viewFrameHeight = 30;
+        backButton.text = @"←";
+        backButton.font = [UIFont systemFontOfSize:18];
+        backButton.textColor = [UIColor whiteColor];
+        _backView.ADD(backButton);
+    }
+    
+    return _backView;
+}
+
+-(void) back
+{
+    [self.logView resignFirstResponder];
+    
+    LC_FAST_ANIMATIONS_F(0.15, ^{
+       
+        self.backView.alpha = 0;
+        self.currentView.alpha = 0;
+        self.logView.alpha = 1;
+        
+    }, ^(BOOL finished){
+        
+        if (self.currentView) {
+            [self.currentView removeFromSuperview];
+        }
+    });
 }
 
 -(void) buttonAction:(UIButton *)button
@@ -67,6 +156,11 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
     if (self.didTapButton) {
         self.didTapButton(button.tag);
     }
+}
+
+-(void) addLog:(NSString *)log
+{
+    [self.logView appendLogString:log];
 }
 
 @end
@@ -97,7 +191,7 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
 -(instancetype) init
 {
-    if (self = [super initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 70, [UIScreen mainScreen].bounds.size.height - 70 - 50, 70, 70)]) {
+    if (self = [super initWithFrame:CGRectMake(LC_DEVICE_WIDTH - 70, LC_DEVICE_HEIGHT - 70 - 50, 70, 70)]) {
         
         [UIWindow hook];
 
@@ -124,29 +218,32 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
     self.layer.shadowOpacity = 1;
     
     
-    self.closeButton = [[UILabel alloc] init];
-    self.closeButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 30, 0, 64, 64);
+    self.closeButton = UILabel.view;
+    self.closeButton.viewFrameX = LC_DEVICE_WIDTH - 30;
+    self.closeButton.viewFrameWidth = 64;
+    self.closeButton.viewFrameHeight = 64;
     self.closeButton.text = @"✕";
     self.closeButton.font = [UIFont systemFontOfSize:18];
     self.closeButton.textColor = [UIColor whiteColor];
     self.closeButton.alpha = 0;
-    [self addSubview:self.closeButton];
+    self.ADD(self.closeButton);
     
     
-    self.simplePreview = [[UILabel alloc] init];
-    self.simplePreview.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    self.simplePreview = UILabel.view;
+    self.simplePreview.viewFrameWidth = self.viewFrameWidth;
+    self.simplePreview.viewFrameHeight = self.viewFrameHeight;
     self.simplePreview.font = [UIFont systemFontOfSize:10];
     self.simplePreview.textColor = [UIColor whiteColor];
     self.simplePreview.textAlignment = NSTextAlignmentCenter;
     self.simplePreview.numberOfLines = 0;
     self.simplePreview.tag = 1;
-    [self addSubview:self.simplePreview];
+    self.ADD(self.simplePreview);
     
     
-    self.mainView = [[__LCDebuggerLog alloc] init];
-    self.mainView.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
+    self.mainView = __LCDebuggerLog.view;
+    self.mainView.viewFrameY = 64;
     self.mainView.alpha = 0;
-    [self addSubview:self.mainView];
+    self.ADD(self.mainView);
     
     @weakly(self);
     
@@ -154,14 +251,57 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
         
         @normally(self);
         
+        if (index == 0) {
+            
+            LCActionSheet * sheet = LCActionSheet.view;
+            [sheet addTitle:@"Log"];
+            [sheet addTitle:@"CPU"];
+            [sheet addTitle:@"Device"];
+            [sheet addTitle:@"Processes"];
+            [sheet addTitle:@"RAM"];
+            [sheet addTitle:@"GPU"];
+            [sheet addTitle:@"Network"];
+            [sheet addTitle:@"Connections"];
+            [sheet addTitle:@"Disk"];
+            [sheet addTitle:@"Battery"];
+
+            sheet.dismissedBlock = ^(NSInteger index){
+              
+                if (index == 0) {
+                    
+                    [self.mainView back];
+                }
+                else if (index == 1){
+                    
+                    LCCPUTableView * tableView = [[LCCPUTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+                    [tableView show];
+                    
+                    [self.mainView changedCurrentView:tableView title:@"CPU"];
+                }
+                else if (index == 2){
+                    
+                    LCDeviceTableView * tableView = [[LCDeviceTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+                    
+                    [self.mainView changedCurrentView:tableView title:@"Device"];
+                }
+                else if (index == 3){
+                    
+                    LCProgressTableView * tableView = [[LCProgressTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+                    
+                    [self.mainView changedCurrentView:tableView title:@"Processes"];
+                }
+            };
+            
+            [sheet show];
+        }
+        
         if (index == 1) {
             
             [self restore:^{
                 
-                LCViewInspector * vi = [[LCViewInspector alloc] init];
+                LCViewInspector * vi = LCViewInspector.view;
                 [vi prepareShow:[UIApplication sharedApplication].keyWindow];
                 vi.alpha = 1;
-                
                 
                 [UIView beginAnimations:@"OPEN" context:nil];
                 [UIView setAnimationBeginsFromCurrentState:YES];
@@ -188,12 +328,12 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
 - (void)addToKeyWindow
 {
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    [LC_KEYWINDOW addSubview:self];
 }
 
 -(void) addLog:(NSString *)log;
 {
-    
+    [self.mainView addLog:log];
 }
 
 -(void) didSelectedAction
@@ -218,7 +358,7 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
 -(void) executeButtonTouchedBlock
 {
-    if (self.frame.size.width == [UIScreen mainScreen].bounds.size.width) {
+    if (self.viewFrameWidth == LC_DEVICE_WIDTH) {
         
         [self restore:nil];
         return;
@@ -242,7 +382,8 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
         self.layer.shadowOffset = CGSizeMake(0, 0);
         self.layer.shadowOpacity = 1;
         
-        self.simplePreview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64);
+        self.simplePreview.viewFrameWidth = LC_DEVICE_WIDTH;
+        self.simplePreview.viewFrameHeight = 64;
         self.simplePreview.tag = 2;
 
         self.mainView.alpha = 1;
@@ -268,7 +409,8 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
         self.layer.shadowOffset = CGSizeMake(0, 0);
         self.layer.shadowOpacity = 1;
         
-        self.simplePreview.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        self.simplePreview.viewFrameWidth = self.viewFrameWidth;
+        self.simplePreview.viewFrameHeight = self.viewFrameHeight;
         self.simplePreview.tag = 1;
         
         self.mainView.alpha = 0;
