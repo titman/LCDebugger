@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 Licheng Guo . http://nsobject.me/. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "LCDebuggerView.h"
+
 
 @interface LCDebugger : NSObject
 

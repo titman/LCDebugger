@@ -1,12 +1,24 @@
 //
+//                  ___       ___
+//                 /\__\     /\  \
+//                /:/  /    /::\  \
+//               /:/  /    /:/\:\  \
+//              /:/  /    /:/  \:\  \
+//             /:/__/    /:/__/ \:\__\
+//             \:\  \    \:\  \  \/__/
+//              \:\  \    \:\  \
+//               \:\  \    \:\  \
+//                \:\__\    \:\__\
+//                 \/__/     \/__/
+//
+//
 //  LS_LOG.m
 //  LCFramework
 
-//  Created by Licheng Guo . ( SUGGESTIONS & BUG titm@tom.com ) on 13-9-12.
+//  Created by LiCheng Guo . ( SUGGESTIONS & BUG titm@tom.com / http://github.com/titman ) on 13-9-12.
 //  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
 //  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
-//
-//
+
 
 #import "LCLog.h"
 #import "LCDebugger.h"
