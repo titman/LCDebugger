@@ -9,6 +9,7 @@
 //  Copyright (c) 2013 Arvydas Sidorenko
 //
 
+#import "LCDebuggerImport.h"
 #import <OpenGLES/ES2/glext.h>
 #import "LCGLCommon.h"
 #import "LCUtils.h"
@@ -136,7 +137,7 @@ static const GLfloat kBubblesPerSecondAvrg = 1.0;
         self.projectionLeft = 0;
         self.projectionRight = self.drawableWidth;
         
-        LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+        LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
         
         self.drawableLiquidMinX = ui.GLtubeTextureLeftX + ui.GLtubeTextureLeftW;
         self.drawableLiquidMaxX = self.projectionRight - ui.GLtubeTextureRightW - ui.GLtubeTextureLiquidTopW;
@@ -160,7 +161,7 @@ static const GLfloat kBubblesPerSecondAvrg = 1.0;
     
     GLBubbleBounds_t bounds = self.bubbleEffect.bounds;
     bounds.maxRightPosition = [LCUtils percentageValueFromMax:self.drawableLiquidMaxX min:self.drawableLiquidMinX percent:self.currentPercentage];
-    LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+    LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
     bounds.maxRightPosition += ui.GLtubeTextureLiquidTopW - ui.GLtubeLiquidTopGlowL;
     self.bubbleEffect.bounds = bounds;
 }
@@ -187,7 +188,7 @@ static const GLfloat kBubblesPerSecondAvrg = 1.0;
     self.effect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0.0, self.drawableWidth, 0.0, self.drawableHeight, 1.0, 10.0);
     self.effect.transform.modelviewMatrix = GLKMatrix4MakeTranslation(0.0, 0.0, -5.0);
     
-    LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+    LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
     
     GLBubbleBounds_t bubbleBounds = {
         .maxLeftPosition = self.drawableLiquidMinX - 5, // Subtract in order to start rendering behind the tube side
@@ -209,7 +210,7 @@ static const GLfloat kBubblesPerSecondAvrg = 1.0;
      * Retina displays need bigger textures and because we map them 1-to-1 to display pixels, we have to calculate this on runtime.
      */
     
-    LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+    LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
     
     /*
      * Left tube side.
@@ -432,7 +433,7 @@ static const GLfloat kBubblesPerSecondAvrg = 1.0;
     {
         GLKMatrix4 save = self.effect.transform.modelviewMatrix;
         
-        LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+        LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
         GLfloat x = self.projectionRight - ui.GLtubeTextureRightW;
         
         glBindVertexArrayOES(self.glVertexArrayTubeRight);
@@ -493,7 +494,7 @@ static const GLfloat kBubblesPerSecondAvrg = 1.0;
     {
         GLKMatrix4 save = self.effect.transform.modelviewMatrix;
         
-        LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+        LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
         GLfloat x = [LCUtils percentageValueFromMax:self.drawableLiquidMaxX min:self.drawableLiquidMinX percent:self.currentPercentage] + ui.GLtubeTextureLeftW;
         
         glBindVertexArrayOES(self.glVertexArrayTubeLiquidTop);

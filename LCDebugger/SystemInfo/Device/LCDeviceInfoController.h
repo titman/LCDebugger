@@ -14,8 +14,6 @@
 
 @interface LCDeviceInfoController : NSObject
 
-+ (instancetype)sharedInstance;
-
 - (LCDeviceInfo*)getDeviceInfo;
 
 @end

@@ -9,6 +9,7 @@
 //  Copyright (c) 2013 Arvydas Sidorenko
 //
 
+#import "LCDebuggerImport.h"
 #import <OpenGLES/ES2/glext.h>
 #import "LCUtils.h"
 #import "LCGLCommon.h"
@@ -373,7 +374,7 @@ static const VertexData_t lineLegendData[] = {
         self.graph.effect.constantColor = GLKVector4Make(components[0], components[1], components[2], CGColorGetAlpha(self.color.CGColor));
         [self.graph.effect prepareToDraw];
         
-        LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+        LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
         glLineWidth(ui.GLdataLineWidth);
         glDrawArrays(GL_LINE_STRIP, 0, self.dataLineDataCurrIdx);
         
@@ -399,7 +400,7 @@ static const VertexData_t lineLegendData[] = {
         self.graph.effect.texture2d0.enabled = NO;
         [self.graph.effect prepareToDraw];
         
-        LCDeviceSpecificUI *ui = [LCDeviceSpecificUI sharedInstance];
+        LCDeviceSpecificUI *ui = LCDeviceSpecificUI.LCS;
         glLineWidth(ui.GLdataLineWidth);
         glDrawArrays(GL_LINE_STRIP, self.dataLineDataCurrIdx, self.dataLineDataValidSize - self.dataLineDataCurrIdx);
         

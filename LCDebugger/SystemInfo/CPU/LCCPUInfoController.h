@@ -21,7 +21,6 @@
 @property (nonatomic, weak) id<LCCPUInfoControllerDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray *cpuLoadHistory;
 
-+ (instancetype)sharedInstance;
 
 - (LCCPUInfo*)getCPUInfo;
 - (void)startCPULoadUpdatesWithFrequency:(NSUInteger)frequency;

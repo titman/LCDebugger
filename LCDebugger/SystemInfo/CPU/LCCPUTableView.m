@@ -9,6 +9,7 @@
 //  Copyright (c) 2013 Arvydas Sidorenko
 //
 
+#import "LCDebuggerImport.h"
 #import <GLKit/GLKit.h>
 #import "LCGLLineGraph.h"
 #import "LCUtils.h"
@@ -62,7 +63,7 @@
 
     self.values = [@[] mutableCopy];
     
-    LCDevice * device = [LCDevice sharedInstance];
+    LCDevice * device = LCDevice.LCS;
     
     [self.values addObject:device.cpuInfo.cpuName];;
     [self.values addObject:device.cpuInfo.cpuSubtype];;
@@ -77,7 +78,7 @@
 
     
     
-    self.cpuUsageGLView = [[GLKView alloc] initWithFrame:CGRectMake(0.0, 0, [LCDeviceSpecificUI sharedInstance].GLdataLineGraphWidth, 200)];
+    self.cpuUsageGLView = [[GLKView alloc] initWithFrame:CGRectMake(0.0, 0, LCDeviceSpecificUI.LCS.GLdataLineGraphWidth, 200)];
     self.cpuUsageGLView.opaque = NO;
     self.cpuUsageGLView.backgroundColor = [UIColor clearColor];
     
@@ -88,12 +89,15 @@
     [self.glGraph setDataLineLegendPostfix:@"%"];
     self.glGraph.preferredFramesPerSecond = kCpuLoadUpdateFrequency;
     
-    [[LCCPUInfoController sharedInstance] setCPULoadHistorySize:[self.glGraph requiredElementToFillGraph]];
+    
+    self.tableHeaderView = self.cpuUsageGLView;
+    
+    [LCCPUInfoController.LCS setCPULoadHistorySize:[self.glGraph requiredElementToFillGraph]];
 }
 
 - (void)show
 {
-    NSArray *cpuLoadArray = [[LCCPUInfoController sharedInstance] cpuLoadHistory];
+    NSArray *cpuLoadArray = [LCCPUInfoController.LCS cpuLoadHistory];
     NSMutableArray *graphData = [NSMutableArray arrayWithCapacity:cpuLoadArray.count];
     CGFloat avr;
     
@@ -113,14 +117,14 @@
     }
     
     [self.glGraph resetDataArray:graphData];
-    [LCCPUInfoController sharedInstance].delegate = self;
     
-    [[LCCPUInfoController sharedInstance] startCPULoadUpdatesWithFrequency:2];
+    LCCPUInfoController.LCS.delegate = self;
+    [LCCPUInfoController.LCS startCPULoadUpdatesWithFrequency:2];
 }
 
 - (void)hide
 {
-    [LCCPUInfoController sharedInstance].delegate = nil;
+    LCCPUInfoController.LCS.delegate = nil;
 }
 
 #pragma mark - Table view data source
@@ -146,7 +150,7 @@
         [cell addSubview:label];
     }
     
-    UILabel * label = (UILabel *)[self viewWithTag:102];
+    UILabel * label = (UILabel *)[cell viewWithTag:102];
     label.text = self.values[indexPath.row];
     
     cell.textLabel.text = self.titles[indexPath.row];
@@ -164,18 +168,6 @@
     return self.values.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 200;
-}
-
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] initWithFrame:self.cpuUsageGLView.frame];
-    [view addSubview:self.cpuUsageGLView];
-    
-    return view;
-}
 
 #pragma mark - CPUInfoController delegate
 

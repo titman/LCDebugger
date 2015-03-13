@@ -70,16 +70,6 @@
 
 @synthesize cpuLoadUpdateTimer;
 
-+ (instancetype)sharedInstance
-{
-    static id sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self class] new];
-    });
-    return sharedInstance;
-}
-
 
 #pragma mark - override
 
