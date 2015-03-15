@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		135444C41AB5DD3900F4C023 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135444C31AB5DD3900F4C023 /* Main.storyboard */; };
 		137F716B1AB3326E008207D3 /* LCRAMInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71661AB3326E008207D3 /* LCRAMInfo.m */; };
 		137F716C1AB3326E008207D3 /* LCRAMInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71681AB3326E008207D3 /* LCRAMInfoController.m */; };
 		137F716D1AB3326E008207D3 /* LCRAMUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F716A1AB3326E008207D3 /* LCRAMUsage.m */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		135444C31AB5DD3900F4C023 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		137F71651AB3326E008207D3 /* LCRAMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfo.h; sourceTree = "<group>"; };
 		137F71661AB3326E008207D3 /* LCRAMInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRAMInfo.m; sourceTree = "<group>"; };
 		137F71671AB3326E008207D3 /* LCRAMInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfoController.h; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				BFBFBD181AAF0BB400854A11 /* AppDelegate.m */,
 				BFBFBD1A1AAF0BB400854A11 /* ViewController.h */,
 				BFBFBD1B1AAF0BB400854A11 /* ViewController.m */,
+				135444C31AB5DD3900F4C023 /* Main.storyboard */,
 				BFBFBD201AAF0BB400854A11 /* Images.xcassets */,
 				BFBFBD221AAF0BB400854A11 /* LaunchScreen.xib */,
 				BFBFBD131AAF0BB400854A11 /* Supporting Files */,
@@ -617,6 +620,7 @@
 				BF63CFD21AB14B0D000343FF /* LCGLBubbleEffect.fsh in Resources */,
 				BFBFBD241AAF0BB400854A11 /* LaunchScreen.xib in Resources */,
 				BFBFBD211AAF0BB400854A11 /* Images.xcassets in Resources */,
+				135444C41AB5DD3900F4C023 /* Main.storyboard in Resources */,
 				BF63CFD41AB14B0D000343FF /* LCGLBubbleEffect.vsh in Resources */,
 				BFA64AA11AB2BB40004139B6 /* LOGO.txt in Resources */,
 			);
