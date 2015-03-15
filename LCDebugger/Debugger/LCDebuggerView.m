@@ -17,6 +17,8 @@
 #import "LCActionSheet.h"
 #import "LCDeviceTableView.h"
 #import "LCProgressTableView.h"
+#import "LCRAMTableView.h"
+#import "LCNetworkTableView.h"
 
 typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
@@ -258,7 +260,7 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
             [sheet addTitle:@"CPU"];
             [sheet addTitle:@"Device"];
             [sheet addTitle:@"Processes"];
-            [sheet addTitle:@"RAM"];
+            [sheet addTitle:@"Memory"];
             [sheet addTitle:@"GPU"];
             [sheet addTitle:@"Network"];
             [sheet addTitle:@"Connections"];
@@ -274,7 +276,6 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
                 else if (index == 1){
                     
                     LCCPUTableView * tableView = [[LCCPUTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
-                    [tableView show];
                     
                     [self.mainView changedCurrentView:tableView title:@"CPU"];
                 }
@@ -289,6 +290,21 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
                     LCProgressTableView * tableView = [[LCProgressTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
                     
                     [self.mainView changedCurrentView:tableView title:@"Processes"];
+                }
+                else if (index == 4){
+                    
+                    LCRAMTableView * tableView = [[LCRAMTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+                    
+                    [self.mainView changedCurrentView:tableView title:@"Memory"];
+                }
+                else if (index == 5){
+                    
+                }
+                else if (index == 6){
+                    
+                    LCNetworkTableView * tableView = [[LCNetworkTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+                    
+                    [self.mainView changedCurrentView:tableView title:@"Network"];
                 }
             };
             
@@ -394,6 +410,8 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
 -(void) restore:(void (^)(void))finishedBlock
 {
+    [self.mainView.logView resignFirstResponder];
+    
     CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"cornerRadius"];
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animation.fromValue = @(0);

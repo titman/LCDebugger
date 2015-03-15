@@ -105,23 +105,6 @@
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    LCProcessInfo * process = self.values[indexPath.row];
-//
-//    NSString * id = [NSString stringWithFormat:@"ID: %@\n",@(process.pid)];
-//    NSString * name = [NSString stringWithFormat:@"Name: %@\n",process.name];
-//    NSString * priority = [NSString stringWithFormat:@"Priority: %@\n",@(process.priority)];
-//    NSString * startTime = [NSString stringWithFormat:@"Start time: %@\n",[self formatStartTime:process.startTime]];
-//    NSString * command = [NSString stringWithFormat:@"Command: %@\n",process.commandLine];
-//    
-//    NSMutableString * string = [NSMutableString string];
-//    [string appendString:id];
-//    [string appendString:name];
-//    [string appendString:priority];
-//    [string appendString:startTime];
-//    [string appendString:command];
-//    
-//    string sizeWithAttributes:<#(NSDictionary *)#>
-    
     return 100;
 }
 

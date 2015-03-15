@@ -13,8 +13,8 @@
 #import "LCDeviceInfo.h"
 #import "LCCPUInfo.h"
 //#import "GPUInfo.h"
-//#import "RAMInfo.h"
-//#import "NetworkInfo.h"
+#import "LCRAMInfo.h"
+#import "LCNetworkInfo.h"
 //#import "StorageInfo.h"
 //#import "BatteryInfo.h"
 
@@ -29,8 +29,8 @@
 @property (nonatomic, strong, readonly) LCCPUInfo        *cpuInfo;
 //@property (nonatomic, strong, readonly) GPUInfo        *gpuInfo;
 @property (nonatomic, copy, readonly)   NSArray        *processes;
-//@property (nonatomic, strong, readonly) RAMInfo        *ramInfo;
-//@property (nonatomic, strong, readonly) NetworkInfo    *networkInfo;
+@property (nonatomic, strong, readonly) LCRAMInfo        *ramInfo;
+@property (nonatomic, strong, readonly) LCNetworkInfo    *networkInfo;
 //@property (nonatomic, strong, readonly) StorageInfo    *storageInfo;
 //@property (nonatomic, strong, readonly) BatteryInfo    *batteryInfo;
 

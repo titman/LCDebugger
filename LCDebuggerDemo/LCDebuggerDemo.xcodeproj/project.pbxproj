@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		137F716B1AB3326E008207D3 /* LCRAMInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71661AB3326E008207D3 /* LCRAMInfo.m */; };
+		137F716C1AB3326E008207D3 /* LCRAMInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71681AB3326E008207D3 /* LCRAMInfoController.m */; };
+		137F716D1AB3326E008207D3 /* LCRAMUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F716A1AB3326E008207D3 /* LCRAMUsage.m */; };
+		137F71701AB3342A008207D3 /* LCRAMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F716F1AB3342A008207D3 /* LCRAMTableView.m */; };
+		137F717B1AB343E1008207D3 /* LCActiveConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71731AB343E1008207D3 /* LCActiveConnection.m */; };
+		137F717C1AB343E1008207D3 /* LCNetworkBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71761AB343E1008207D3 /* LCNetworkBandwidth.m */; };
+		137F717D1AB343E1008207D3 /* LCNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71781AB343E1008207D3 /* LCNetworkInfo.m */; };
+		137F717E1AB343E1008207D3 /* LCNetworkInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F717A1AB343E1008207D3 /* LCNetworkInfoController.m */; };
+		137F71811AB34787008207D3 /* LCNetworkTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71801AB34787008207D3 /* LCNetworkTableView.m */; };
+		13BB1AB61AB53C9C007FC7EB /* LCGPUInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BB1AB31AB53C9C007FC7EB /* LCGPUInfo.m */; };
+		13BB1AB71AB53C9C007FC7EB /* LCGPUInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BB1AB51AB53C9C007FC7EB /* LCGPUInfoController.m */; };
+		13BB1ABA1AB53D13007FC7EB /* LCGPUTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BB1AB91AB53D13007FC7EB /* LCGPUTableView.m */; };
 		BF63CF9C1AB14256000343FF /* UIWindow+LCUIWindowHook.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CF8B1AB14256000343FF /* UIWindow+LCUIWindowHook.m */; };
 		BF63CF9D1AB14256000343FF /* LCDebuggerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CF8E1AB14256000343FF /* LCDebuggerView.m */; };
 		BF63CF9E1AB14256000343FF /* LCLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF63CF911AB14256000343FF /* LCLog.mm */; };
@@ -50,7 +62,6 @@
 		BFBFBD161AAF0BB400854A11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBFBD151AAF0BB400854A11 /* main.m */; };
 		BFBFBD191AAF0BB400854A11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBFBD181AAF0BB400854A11 /* AppDelegate.m */; };
 		BFBFBD1C1AAF0BB400854A11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBFBD1B1AAF0BB400854A11 /* ViewController.m */; };
-		BFBFBD1F1AAF0BB400854A11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBFBD1D1AAF0BB400854A11 /* Main.storyboard */; };
 		BFBFBD211AAF0BB400854A11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBFBD201AAF0BB400854A11 /* Images.xcassets */; };
 		BFBFBD241AAF0BB400854A11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBFBD221AAF0BB400854A11 /* LaunchScreen.xib */; };
 		BFBFBD301AAF0BB400854A11 /* LCDebuggerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBFBD2F1AAF0BB400854A11 /* LCDebuggerDemoTests.m */; };
@@ -68,6 +79,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		137F71651AB3326E008207D3 /* LCRAMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfo.h; sourceTree = "<group>"; };
+		137F71661AB3326E008207D3 /* LCRAMInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRAMInfo.m; sourceTree = "<group>"; };
+		137F71671AB3326E008207D3 /* LCRAMInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfoController.h; sourceTree = "<group>"; };
+		137F71681AB3326E008207D3 /* LCRAMInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRAMInfoController.m; sourceTree = "<group>"; };
+		137F71691AB3326E008207D3 /* LCRAMUsage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMUsage.h; sourceTree = "<group>"; };
+		137F716A1AB3326E008207D3 /* LCRAMUsage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRAMUsage.m; sourceTree = "<group>"; };
+		137F716E1AB3342A008207D3 /* LCRAMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMTableView.h; sourceTree = "<group>"; };
+		137F716F1AB3342A008207D3 /* LCRAMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRAMTableView.m; sourceTree = "<group>"; };
+		137F71721AB343E1008207D3 /* LCActiveConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActiveConnection.h; sourceTree = "<group>"; };
+		137F71731AB343E1008207D3 /* LCActiveConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActiveConnection.m; sourceTree = "<group>"; };
+		137F71741AB343E1008207D3 /* bsd_var.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bsd_var.h; sourceTree = "<group>"; };
+		137F71751AB343E1008207D3 /* LCNetworkBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNetworkBandwidth.h; sourceTree = "<group>"; };
+		137F71761AB343E1008207D3 /* LCNetworkBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNetworkBandwidth.m; sourceTree = "<group>"; };
+		137F71771AB343E1008207D3 /* LCNetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNetworkInfo.h; sourceTree = "<group>"; };
+		137F71781AB343E1008207D3 /* LCNetworkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNetworkInfo.m; sourceTree = "<group>"; };
+		137F71791AB343E1008207D3 /* LCNetworkInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNetworkInfoController.h; sourceTree = "<group>"; };
+		137F717A1AB343E1008207D3 /* LCNetworkInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNetworkInfoController.m; sourceTree = "<group>"; };
+		137F717F1AB34787008207D3 /* LCNetworkTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNetworkTableView.h; sourceTree = "<group>"; };
+		137F71801AB34787008207D3 /* LCNetworkTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNetworkTableView.m; sourceTree = "<group>"; };
+		13BB1AB21AB53C9C007FC7EB /* LCGPUInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCGPUInfo.h; sourceTree = "<group>"; };
+		13BB1AB31AB53C9C007FC7EB /* LCGPUInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCGPUInfo.m; sourceTree = "<group>"; };
+		13BB1AB41AB53C9C007FC7EB /* LCGPUInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCGPUInfoController.h; sourceTree = "<group>"; };
+		13BB1AB51AB53C9C007FC7EB /* LCGPUInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCGPUInfoController.m; sourceTree = "<group>"; };
+		13BB1AB81AB53D13007FC7EB /* LCGPUTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCGPUTableView.h; sourceTree = "<group>"; };
+		13BB1AB91AB53D13007FC7EB /* LCGPUTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCGPUTableView.m; sourceTree = "<group>"; };
 		BF63CF8A1AB14256000343FF /* UIWindow+LCUIWindowHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LCUIWindowHook.h"; sourceTree = "<group>"; };
 		BF63CF8B1AB14256000343FF /* UIWindow+LCUIWindowHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LCUIWindowHook.m"; sourceTree = "<group>"; };
 		BF63CF8D1AB14256000343FF /* LCDebuggerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDebuggerView.h; sourceTree = "<group>"; };
@@ -154,7 +190,6 @@
 		BFBFBD181AAF0BB400854A11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BFBFBD1A1AAF0BB400854A11 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BFBFBD1B1AAF0BB400854A11 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BFBFBD1E1AAF0BB400854A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBFBD201AAF0BB400854A11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BFBFBD231AAF0BB400854A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BFBFBD291AAF0BB400854A11 /* LCDebuggerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCDebuggerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +217,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		137F71641AB33261008207D3 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				137F71651AB3326E008207D3 /* LCRAMInfo.h */,
+				137F71661AB3326E008207D3 /* LCRAMInfo.m */,
+				137F71671AB3326E008207D3 /* LCRAMInfoController.h */,
+				137F71681AB3326E008207D3 /* LCRAMInfoController.m */,
+				137F71691AB3326E008207D3 /* LCRAMUsage.h */,
+				137F716A1AB3326E008207D3 /* LCRAMUsage.m */,
+				137F716E1AB3342A008207D3 /* LCRAMTableView.h */,
+				137F716F1AB3342A008207D3 /* LCRAMTableView.m */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		137F71711AB343D9008207D3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				137F71721AB343E1008207D3 /* LCActiveConnection.h */,
+				137F71731AB343E1008207D3 /* LCActiveConnection.m */,
+				137F71741AB343E1008207D3 /* bsd_var.h */,
+				137F71751AB343E1008207D3 /* LCNetworkBandwidth.h */,
+				137F71761AB343E1008207D3 /* LCNetworkBandwidth.m */,
+				137F71771AB343E1008207D3 /* LCNetworkInfo.h */,
+				137F71781AB343E1008207D3 /* LCNetworkInfo.m */,
+				137F71791AB343E1008207D3 /* LCNetworkInfoController.h */,
+				137F717A1AB343E1008207D3 /* LCNetworkInfoController.m */,
+				137F717F1AB34787008207D3 /* LCNetworkTableView.h */,
+				137F71801AB34787008207D3 /* LCNetworkTableView.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		13BB1AB11AB53C86007FC7EB /* GPU */ = {
+			isa = PBXGroup;
+			children = (
+				13BB1AB21AB53C9C007FC7EB /* LCGPUInfo.h */,
+				13BB1AB31AB53C9C007FC7EB /* LCGPUInfo.m */,
+				13BB1AB41AB53C9C007FC7EB /* LCGPUInfoController.h */,
+				13BB1AB51AB53C9C007FC7EB /* LCGPUInfoController.m */,
+				13BB1AB81AB53D13007FC7EB /* LCGPUTableView.h */,
+				13BB1AB91AB53D13007FC7EB /* LCGPUTableView.m */,
+			);
+			path = GPU;
+			sourceTree = "<group>";
+		};
 		BF63CF891AB14256000343FF /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +305,9 @@
 		BF63CF921AB14256000343FF /* SystemInfo */ = {
 			isa = PBXGroup;
 			children = (
+				13BB1AB11AB53C86007FC7EB /* GPU */,
+				137F71711AB343D9008207D3 /* Network */,
+				137F71641AB33261008207D3 /* Memory */,
 				BFA64AC81AB30B9A004139B6 /* Process */,
 				BF63CFDE1AB15DBD000343FF /* Device */,
 				BF63CFDA1AB14F82000343FF /* UI */,
@@ -398,7 +482,6 @@
 				BFBFBD181AAF0BB400854A11 /* AppDelegate.m */,
 				BFBFBD1A1AAF0BB400854A11 /* ViewController.h */,
 				BFBFBD1B1AAF0BB400854A11 /* ViewController.m */,
-				BFBFBD1D1AAF0BB400854A11 /* Main.storyboard */,
 				BFBFBD201AAF0BB400854A11 /* Images.xcassets */,
 				BFBFBD221AAF0BB400854A11 /* LaunchScreen.xib */,
 				BFBFBD131AAF0BB400854A11 /* Supporting Files */,
@@ -531,7 +614,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBFBD1F1AAF0BB400854A11 /* Main.storyboard in Resources */,
 				BF63CFD21AB14B0D000343FF /* LCGLBubbleEffect.fsh in Resources */,
 				BFBFBD241AAF0BB400854A11 /* LaunchScreen.xib in Resources */,
 				BFBFBD211AAF0BB400854A11 /* Images.xcassets in Resources */,
@@ -556,19 +638,29 @@
 			files = (
 				BFBFBD1C1AAF0BB400854A11 /* ViewController.m in Sources */,
 				BF63CFE31AB15DC5000343FF /* LCDeviceInfo.m in Sources */,
+				13BB1AB71AB53C9C007FC7EB /* LCGPUInfoController.m in Sources */,
 				BF63CFA21AB14256000343FF /* LCViewInspector.m in Sources */,
+				137F717B1AB343E1008207D3 /* LCActiveConnection.m in Sources */,
 				BF63CFAF1AB142DA000343FF /* LCCPULoadFilter.m in Sources */,
 				BFA64AA41AB2C278004139B6 /* LCGCD.m in Sources */,
 				BFA64A8D1AB2A926004139B6 /* UIView+LCUIViewFrame.m in Sources */,
+				137F716D1AB3326E008207D3 /* LCRAMUsage.m in Sources */,
 				BF63CFB51AB144A9000343FF /* LCUtils.m in Sources */,
 				BFA64AB71AB2D3A3004139B6 /* LCUIKeyBoard.m in Sources */,
 				BF63CFAD1AB142DA000343FF /* LCCPUInfoController.m in Sources */,
 				BF63CFB81AB1457F000343FF /* LCDevice.m in Sources */,
 				BFA64A901AB2A967004139B6 /* UIView+LCExtension.m in Sources */,
 				BFA64A931AB2A979004139B6 /* UIView+LCGesture.m in Sources */,
+				137F717E1AB343E1008207D3 /* LCNetworkInfoController.m in Sources */,
+				137F717D1AB343E1008207D3 /* LCNetworkInfo.m in Sources */,
+				137F716B1AB3326E008207D3 /* LCRAMInfo.m in Sources */,
 				BFA64AD11AB30B9A004139B6 /* LCProgressTableView.m in Sources */,
 				BFA64AB01AB2C5FF004139B6 /* LCCMD.m in Sources */,
+				137F716C1AB3326E008207D3 /* LCRAMInfoController.m in Sources */,
+				13BB1AB61AB53C9C007FC7EB /* LCGPUInfo.m in Sources */,
 				BF63CFA11AB14256000343FF /* LCSystemInfo.m in Sources */,
+				137F71811AB34787008207D3 /* LCNetworkTableView.m in Sources */,
+				137F71701AB3342A008207D3 /* LCRAMTableView.m in Sources */,
 				BFA64ABA1AB2E6A2004139B6 /* LCActionSheet.m in Sources */,
 				BF63CFA01AB14256000343FF /* LCNetworkTraffic.m in Sources */,
 				BFA64ABD1AB2F128004139B6 /* LCDeviceTableView.m in Sources */,
@@ -576,7 +668,9 @@
 				BF63CFBB1AB14A4B000343FF /* LCCPUTableView.m in Sources */,
 				BFBFBD5A1AB027B700854A11 /* LCDebugger.m in Sources */,
 				BFBFBD191AAF0BB400854A11 /* AppDelegate.m in Sources */,
+				13BB1ABA1AB53D13007FC7EB /* LCGPUTableView.m in Sources */,
 				BF63CFD01AB14B0D000343FF /* LCGLDataLine.m in Sources */,
+				137F717C1AB343E1008207D3 /* LCNetworkBandwidth.m in Sources */,
 				BF63CF9C1AB14256000343FF /* UIWindow+LCUIWindowHook.m in Sources */,
 				BFA64A9D1AB2B4F2004139B6 /* LCLogView.m in Sources */,
 				BFA64AB11AB2C5FF004139B6 /* LCCMDInput.m in Sources */,
@@ -617,14 +711,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BFBFBD1D1AAF0BB400854A11 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BFBFBD1E1AAF0BB400854A11 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BFBFBD221AAF0BB400854A11 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -671,7 +757,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -707,7 +793,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -719,8 +805,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LCDebuggerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -729,8 +817,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LCDebuggerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

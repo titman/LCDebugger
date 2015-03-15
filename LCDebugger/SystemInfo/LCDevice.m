@@ -19,6 +19,8 @@
 #import "LCCPUInfo.h"
 #import "LCProcessInfoController.h"
 #import "LCDevice.h"
+#import "LCRAMInfoController.h"
+#import "LCNetworkInfoController.h"
 
 @interface LCDevice()
 // Overriden
@@ -26,8 +28,8 @@
 @property (nonatomic, strong) LCCPUInfo        *cpuInfo;
 //@property (nonatomic, strong) GPUInfo        *gpuInfo;
 @property (nonatomic, copy)   NSArray        *processes;
-//@property (nonatomic, strong) RAMInfo        *ramInfo;
-//@property (nonatomic, strong) NetworkInfo    *networkInfo;
+@property (nonatomic, strong) LCRAMInfo        *ramInfo;
+@property (nonatomic, strong) LCNetworkInfo    *networkInfo;
 //@property (nonatomic, strong) StorageInfo    *storageInfo;
 //@property (nonatomic, strong) BatteryInfo    *batteryInfo;
 @end
@@ -37,8 +39,8 @@
 @synthesize cpuInfo;
 //@synthesize gpuInfo;
 @synthesize processes;
-//@synthesize ramInfo;
-//@synthesize networkInfo;
+@synthesize ramInfo;
+@synthesize networkInfo;
 //@synthesize storageInfo;
 //@synthesize batteryInfo;
 
@@ -52,13 +54,12 @@
         LCHardcodedDeviceData *hardcodeData = [LCHardcodedDeviceData sharedDeviceData];
         [hardcodeData setHwMachine:hwMachine];
         
-//        AppDelegate *app = [AppDelegate sharedDelegate];
         deviceInfo = [LCDeviceInfoController.LCS getDeviceInfo];
         cpuInfo = [LCCPUInfoController.LCS getCPUInfo];
 //        gpuInfo = [app.gpuInfoCtrl getGPUInfo];
         processes = [LCProcessInfoController.LCS getProcesses];
-//        ramInfo = [app.ramInfoCtrl getRAMInfo];
-//        networkInfo = [app.networkInfoCtrl getNetworkInfo];
+        ramInfo = [LCRAMInfoController.LCS getRAMInfo];
+        networkInfo = [LCNetworkInfoController.LCS getNetworkInfo];
 //        storageInfo = [app.storageInfoCtrl getStorageInfo];
 //        batteryInfo = [app.batteryInfoCtrl getBatteryInfo];
     }

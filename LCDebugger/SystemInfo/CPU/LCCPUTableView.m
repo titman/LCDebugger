@@ -93,6 +93,8 @@
     self.tableHeaderView = self.cpuUsageGLView;
     
     [LCCPUInfoController.LCS setCPULoadHistorySize:[self.glGraph requiredElementToFillGraph]];
+    
+    [self show];
 }
 
 - (void)show

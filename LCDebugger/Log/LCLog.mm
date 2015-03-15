@@ -39,10 +39,10 @@ extern "C" void LCLog( NSObject * format, ... )
 	NSString * text = nil;
 	
 	if ( [format isKindOfClass:[NSString class]] ){
-		text = [NSString stringWithFormat:@"LC 🔧 [LOG] ⥤ %@", NSStringFormatted((NSString *)format, args)];
+		text = [NSString stringWithFormat:@"/Log/ ➝ %@", NSStringFormatted((NSString *)format, args)];
 	}
 	else{
-		text = [NSString stringWithFormat:@"LC ⥤ %@", [format description]];
+		text = [NSString stringWithFormat:@"/Log/ ➝ %@", [format description]];
 	}
     
     va_end( args );
@@ -69,10 +69,10 @@ extern "C" void LCInfo( NSObject * format, ... )
 	NSString * text = nil;
 	
 	if ( [format isKindOfClass:[NSString class]] ){
-		text = [NSString stringWithFormat:@"LC ✨ [INFO] ⥤ %@", NSStringFormatted((NSString *)format, args)];
+		text = [NSString stringWithFormat:@"/Info/ ➝ %@", NSStringFormatted((NSString *)format, args)];
 	}
 	else{
-		text = [NSString stringWithFormat:@"LC ✨ [INFO] ⥤ %@", [format description]];
+		text = [NSString stringWithFormat:@"/Info/ ➝ %@", [format description]];
 	}
     
     va_end( args );
@@ -95,10 +95,10 @@ extern "C" void LCError( NSString * file, const char * function , int line, NSOb
 	NSString * text = nil;
 	
 	if ( [format isKindOfClass:[NSString class]] ){
-		text = [NSString stringWithFormat:@"LC 💀 [ERROR] ⥤ %@", NSStringFormatted((NSString *)format, args)];
+		text = [NSString stringWithFormat:@"/Error/ ➝ %@", NSStringFormatted((NSString *)format, args)];
 	}
 	else{
-		text = [NSString stringWithFormat:@"LC 💀 [ERROR] ⥤ %@", [format description]];
+		text = [NSString stringWithFormat:@"/Error/ ➝ %@", [format description]];
 	}
     
     va_end( args );
@@ -134,10 +134,10 @@ extern "C" void LCCMDInfo( NSObject * format, ... )
 	NSString * text = nil;
 	
 	if ( [format isKindOfClass:[NSString class]] ){
-		text = [NSString stringWithFormat:@"LC ➕ [CMD] ⥤ %@", NSStringFormatted((NSString *)format, args)];
+		text = [NSString stringWithFormat:@"/CMD/ ➝ %@", NSStringFormatted((NSString *)format, args)];
 	}
 	else{
-		text = [NSString stringWithFormat:@"LC ➕ [CMD] ⥤ %@", [format description]];
+		text = [NSString stringWithFormat:@"/CMD/ ➝ %@", [format description]];
 	}
     
     va_end( args );
