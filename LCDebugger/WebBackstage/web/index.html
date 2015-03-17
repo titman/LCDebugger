@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{text-align:center;}
+	</style>
+</head>
+<body>
+	<p><img src="preview.jpg" id="screenshot" /></p>
+	<p><input id="cmd" style="width:500px;" placeholder="Input cmd. ( You can uput 'see help' to see the all cmd.)" /></p>
+	<p><button id="submit">submit</button></p>
+	<script>
+	var btnSub = document.getElementById("submit"),
+		inputCmd = document.getElementById("cmd"),
+		img = document.getElementById("screenshot");
+        base_url = window.location.pathname;
+        
+		btnSub.onclick = function(){
+			var sth = inputCmd.value;
+			if(sth!=''){
+				window.location.href =  base_url+'?cmd='+sth;
+			}
+			else{
+				alert("Input something first.");
+			}
+		}
+	setInterval("refreshImg()",500);
+	function refreshImg(){
+		img.setAttribute("src","preview.jpg?stamp="+Math.random())
+	}
+	</script>
+</body>
+</html>

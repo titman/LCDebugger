@@ -12,25 +12,12 @@
 #import "LCLog.h"
 #import "UIDevice+Reachability.h"
 #import "HTTPServer.h"
-
-//#define BUFSIZE 8096
-
-//#define STATUS_OFFLINE	0
-//#define STATUS_ATTEMPT	1
-//#define STATUS_ONLINE	2
-//
-//#define DO_CALLBACK(X, Y) if (self.delegate && [self.delegate respondsToSelector:@selector(X)]) [self.delegate performSelector:@selector(X) withObject:Y];
-
+#import "LCTools.h"
+#import "LCWebServerConnection.h"
 
 @interface LCWebServer ()
 
 @property(nonatomic,strong) HTTPServer * server;
-
-//@property (nonatomic,assign) NSInteger serverStatus;
-//@property (nonatomic,assign) int listenfd;
-//@property (nonatomic,assign) int socketfd;
-//@property (nonatomic,assign) BOOL isServing;
-
 
 @end
 
@@ -53,43 +40,41 @@
 {
     [self buildWebFolder];
     
-//    if (self.isServing) return;
-//    
-//    if (![UIDevice  networkAvailable])
-//    {
-//        ERROR(@"You are not connected to the network. Please do so before running this application.");
-//        return;
-//    }
-//    
-//    [self startServer];
-//    
-//    self.isServing = YES;
-    
-    // Create server using our custom MyHTTPServer class
     self.server = [[HTTPServer alloc] init];
     
-    // Tell the server to broadcast its presence via Bonjour.
-    // This allows browsers such as Safari to automatically discover our service.
     [self.server setType:@"_http._tcp."];
-    
-    // Normally there's no need to run our server on any specific port.
-    // Technologies like Bonjour allow clients to dynamically discover the server's port at runtime.
-    // However, for easy testing you may want force a certain port so you can just hit the refresh button.
+  
     [self.server setPort:12352];
     
-    // Serve files from our embedded Web folder
     [self.server setDocumentRoot:[self.class webFolderPath]];
     
+    [self.server setConnectionClass:[LCWebServerConnection class]];
+    
     [self startServer];
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateImage) userInfo:nil repeats:YES];
 }
 
+-(void) updateImage
+{
+    UIGraphicsBeginImageContext(LC_KEYWINDOW.bounds.size);
+    
+    [LC_KEYWINDOW.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 
+    NSData * data = UIImageJPEGRepresentation(image, 0.5);
+    
+    [data writeToFile:[[self.class webFolderPath] stringByAppendingString:@"preview.jpg"] atomically:YES];
+}
 
 -(void) buildWebFolder
 {
     [self.class touchPath:[self.class webFolderPath]];
     
-    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"cmd" ofType:@"html"] toPath:[[self.class webFolderPath] stringByAppendingString:@"index.html"] error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[[self.class webFolderPath] stringByAppendingString:@"index.html"] error:nil];
+    
+    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] toPath:[[self.class webFolderPath] stringByAppendingString:@"index.html"] error:nil];
 }
 
 +(NSString *) webFolderPath

@@ -77,17 +77,14 @@ SCNetworkReachabilityRef reachability;
 {
     NSString *localIP = nil;
     struct ifaddrs *addrs;
+    
     if (getifaddrs(&addrs)==0) {
         const struct ifaddrs *cursor = addrs;
         while (cursor != NULL) {
             if (cursor->ifa_addr->sa_family == AF_INET && (cursor->ifa_flags & IFF_LOOPBACK) == 0)
             {
-                //NSString *name = [NSString stringWithUTF8String:cursor->ifa_name];
-                //if ([name isEqualToString:@"en0"]) // Wi-Fi adapter
-                {
-                    localIP = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
-                    break;
-                }
+                localIP = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
+                break;
             }
             cursor = cursor->ifa_next;
         }
