@@ -7,7 +7,7 @@
 //
 
 #import "LCDebuggerView.h"
-
+#import "LCCrashReport.h"
 
 @interface LCDebugger : NSObject
 

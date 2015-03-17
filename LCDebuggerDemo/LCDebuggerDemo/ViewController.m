@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "LCDebugger.h"
+#import "LCWebServer.h"
+#import "LCDebuggerImport.h"
+#import "UIDevice+Reachability.h"
 
 @interface ViewController ()
 
@@ -15,10 +18,17 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self performSelector:@selector(test) withObject:nil afterDelay:0];
+    
+    [LCWebServer.LCS start];
+    
+    NSString * address = [NSString stringWithFormat:@"http://%@:12352", [UIDevice localIPAddress]];
+    
+    INFO(@"Web address : %@", address);
 }
 
 static LCDebugger * touch = nil;

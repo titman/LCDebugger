@@ -23,8 +23,8 @@ static const CGFloat kNetworkGraphMaxValue = MB_TO_B(100);
 
 @interface LCNetworkTableView () <UITableViewDelegate,UITableViewDataSource,LCNetworkInfoControllerDelegate>
 
-@property (nonatomic, strong) LCGLLineGraph   *networkGraph;
-@property (nonatomic, strong) GLKView       *networkGLView;
+@property (nonatomic, strong) LCGLLineGraph * networkGraph;
+@property (nonatomic, strong) GLKView * networkGLView;
 @property (nonatomic, strong) LCNetworkBandwidth * bandwidh;
 
 @property(nonatomic, strong) NSMutableArray * titles;
@@ -77,7 +77,6 @@ static const CGFloat kNetworkGraphMaxValue = MB_TO_B(100);
     
     return self;
 }
-
 
 -(void) buildUI
 {
@@ -155,9 +154,9 @@ static const CGFloat kNetworkGraphMaxValue = MB_TO_B(100);
 {
     [self updateLabels:bandwidth];
     
-    NSNumber *upValue = @(bandwidth.sent);
-    NSNumber *downValue = @(bandwidth.received);
-    [self.networkGraph addDataValue:@[upValue, downValue]];
+//    NSString *upValue = [NSString stringWithFormat:@"↑ %@",@(bandwidth.sent)];
+//    NSString *downValue = [NSString stringWithFormat:@"↓ %@",@(bandwidth.received)];
+    [self.networkGraph addDataValue:@[@(bandwidth.sent), @(bandwidth.received)]];
 }
 
 - (void)networkStatusUpdated

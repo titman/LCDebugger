@@ -412,6 +412,7 @@ static void reachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     }
     
     NSURL *url = [NSURL URLWithString:@"http://www.dyndns.org/cgi-bin/check_ip.cgi"];
+    
     if (!url)
     {
         ERROR(@"failed to create NSURL.");
@@ -422,7 +423,7 @@ static void reachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     NSString *ipHtml = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     if (error)
     {
-        ERROR(@"failed to fetch IP content: %@", error.description);
+        //ERROR(@"failed to fetch IP content: %@", error.description);
         return ip;
     }
 
@@ -431,7 +432,7 @@ static void reachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
                                                                               error:&error];
     if (error)
     {
-        ERROR(@"failed to create regexp: %@", error.description);
+        //ERROR(@"failed to create regexp: %@", error.description);
         return ip;
     }
     NSRange regexpRange = [regexp rangeOfFirstMatchInString:ipHtml options:NSMatchingReportCompletion range:NSMakeRange(0, ipHtml.length)];

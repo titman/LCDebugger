@@ -19,9 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
     [LCCMD addClassCMD:@"application" CMDType:LC_CMD_TYPE_SEE IMPClass:[self class] CMDDescription:@"test"];
-    
     
     return YES;
 }

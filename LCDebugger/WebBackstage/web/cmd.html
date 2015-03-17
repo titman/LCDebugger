@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{text-align:center;}
+	</style>
+</head>
+<body>
+	<p><img src="images/1.jpg" id="screenshot" /></p>
+	<p><input id="cmd" style="width:500px;" placeholder="input sth.." /></p>
+	<p><button id="submit">提交命令</button></p>
+	<script>
+	var btnSub = document.getElementById("submit"),
+		inputCmd = document.getElementById("cmd"),
+		img = document.getElementById("screenshot");
+		btnSub.onclick = function(){
+			var sth = inputCmd.value;
+			if(sth!=''){
+				window.location.href =  'http://192.168.0.134:62401?cmd='+sth;
+			}
+			else{
+				alert("请码点东西先");
+			}
+		}
+	setInterval("refreshImg()",1000);
+	function refreshImg(){
+		img.setAttribute("src","preview.jpg")
+	}
+	</script>
+</body>
+</html>

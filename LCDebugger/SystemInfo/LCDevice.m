@@ -21,47 +21,43 @@
 #import "LCDevice.h"
 #import "LCRAMInfoController.h"
 #import "LCNetworkInfoController.h"
+#import "LCStorageInfoController.h"
 
 @interface LCDevice()
 // Overriden
 @property (nonatomic, strong) LCDeviceInfo     *deviceInfo;
 @property (nonatomic, strong) LCCPUInfo        *cpuInfo;
-//@property (nonatomic, strong) GPUInfo        *gpuInfo;
 @property (nonatomic, copy)   NSArray        *processes;
 @property (nonatomic, strong) LCRAMInfo        *ramInfo;
 @property (nonatomic, strong) LCNetworkInfo    *networkInfo;
-//@property (nonatomic, strong) StorageInfo    *storageInfo;
-//@property (nonatomic, strong) BatteryInfo    *batteryInfo;
+@property (nonatomic, strong) LCStorageInfo    *storageInfo;
+
 @end
 
 @implementation LCDevice
+
 @synthesize deviceInfo;
 @synthesize cpuInfo;
-//@synthesize gpuInfo;
 @synthesize processes;
 @synthesize ramInfo;
 @synthesize networkInfo;
-//@synthesize storageInfo;
-//@synthesize batteryInfo;
+@synthesize storageInfo;
 
 - (id)init
 {
     if (self = [super init])
     {
-        // Warning: since we rely a lot on hardcoded data, hw.machine must be retrieved
-        // before everything else!
         NSString *hwMachine = [LCUtils getSysCtlChrWithSpecifier:"hw.machine"];
+        
         LCHardcodedDeviceData *hardcodeData = [LCHardcodedDeviceData sharedDeviceData];
         [hardcodeData setHwMachine:hwMachine];
         
         deviceInfo = [LCDeviceInfoController.LCS getDeviceInfo];
         cpuInfo = [LCCPUInfoController.LCS getCPUInfo];
-//        gpuInfo = [app.gpuInfoCtrl getGPUInfo];
         processes = [LCProcessInfoController.LCS getProcesses];
         ramInfo = [LCRAMInfoController.LCS getRAMInfo];
         networkInfo = [LCNetworkInfoController.LCS getNetworkInfo];
-//        storageInfo = [app.storageInfoCtrl getStorageInfo];
-//        batteryInfo = [app.batteryInfoCtrl getBatteryInfo];
+        storageInfo = [LCStorageInfoController.LCS getStorageInfo];
     }
     return self;
 }
@@ -87,11 +83,10 @@
 {
     processes = [LCProcessInfoController.LCS getProcesses];
 }
-//
-//- (void)refreshStorageInfo
-//{
-//    AppDelegate *app = [AppDelegate sharedDelegate];
-//    storageInfo = [app.storageInfoCtrl getStorageInfo];
-//}
+
+- (void)refreshStorageInfo
+{
+    storageInfo = [LCStorageInfoController.LCS getStorageInfo];
+}
 
 @end

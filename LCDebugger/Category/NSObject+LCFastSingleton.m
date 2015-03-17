@@ -84,7 +84,7 @@ static NSMutableDictionary * __instanceDatasource = nil;
         return @"No singleton, or not use NSObject+LCFastSingleton.";
     }
     
-    NSMutableString * info = [NSMutableString stringWithFormat:@"  * count : %@\n", @(datasource.allKeys.count)];
+    NSMutableString * info = [NSMutableString stringWithFormat:@"   * count : %@\n", @(datasource.allKeys.count)];
     
     for (NSString * key in datasource.allKeys) {
         

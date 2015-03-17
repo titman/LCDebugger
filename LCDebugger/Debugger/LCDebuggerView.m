@@ -19,6 +19,7 @@
 #import "LCProgressTableView.h"
 #import "LCRAMTableView.h"
 #import "LCNetworkTableView.h"
+#import "LCStorageTableView.h"
 
 typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
@@ -51,7 +52,7 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 -(void) buildUI
 {
     CGFloat inv = 10;
-    NSArray * titles = @[@"System Info",@"Skeleton",@"Crash Report",@"HTTP Backstage"];
+    NSArray * titles = @[@"System Info",@"Skeleton",@"Crash Report",@"Web Backstage"];
     CGFloat width = (self.viewFrameWidth - (inv * (titles.count + 1))) / titles.count;
     
     for (NSInteger i = 0; i< titles.count; i++) {
@@ -261,11 +262,8 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
             [sheet addTitle:@"Device"];
             [sheet addTitle:@"Processes"];
             [sheet addTitle:@"Memory"];
-            [sheet addTitle:@"GPU"];
             [sheet addTitle:@"Network"];
-            [sheet addTitle:@"Connections"];
             [sheet addTitle:@"Disk"];
-            [sheet addTitle:@"Battery"];
 
             sheet.dismissedBlock = ^(NSInteger index){
               
@@ -299,12 +297,15 @@ typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
                 }
                 else if (index == 5){
                     
-                }
-                else if (index == 6){
-                    
                     LCNetworkTableView * tableView = [[LCNetworkTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
                     
                     [self.mainView changedCurrentView:tableView title:@"Network"];
+                }
+                else if (index == 6){
+                    
+                    LCStorageTableView * tableView = [[LCStorageTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+                    
+                    [self.mainView changedCurrentView:tableView title:@"Disk"];
                 }
             };
             

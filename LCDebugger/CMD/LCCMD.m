@@ -29,7 +29,7 @@
         return _cmdDescription;
     }
     
-    return [NSString stringWithFormat:@"%@ (After add)",_cmdDescription];
+    return [NSString stringWithFormat:@"%@ (*)",_cmdDescription];
 }
 
 @end
@@ -215,7 +215,7 @@ static NSMutableDictionary * __commandCache = nil;
             return @"No cmd, or not use LCCMD.";
         }
         
-        NSMutableString * info = [NSMutableString stringWithFormat:@"  * CMD Count : %@\n", @(datasource.allKeys.count)];
+        NSMutableString * info = [NSMutableString stringWithFormat:@"   * CMD Count : %@\n", @(datasource.allKeys.count)];
         
         for (NSString * key in datasource.allKeys) {
             
