@@ -26,10 +26,11 @@
     
     if (!self.afterAdd || [self.cmd isEqualToString:@"exit"] || [self.cmd isEqualToString:@"help"] || [self.cmd isEqualToString:@"lcs"]) {
         
-        return _cmdDescription;
+        
+        return [NSString stringWithFormat:@"%@ (*)",_cmdDescription];
     }
     
-    return [NSString stringWithFormat:@"%@ (*)",_cmdDescription];
+    return _cmdDescription;
 }
 
 @end
@@ -55,7 +56,9 @@ static NSMutableDictionary * __commandCache = nil;
         return NO;
     }
     
-    CMDLog(@"CMD - %@",[command lowercaseString]);
+    command = [command lowercaseString];
+    
+    CMDLog(@"CMD - %@",command);
     
     NSString * errorString = [NSString stringWithFormat:@"Invalid command : %@. ( You can input 'see help' to see all command. Or add the command use 'LCCMD.h')",command];
     

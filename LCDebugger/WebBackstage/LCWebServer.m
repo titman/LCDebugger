@@ -41,13 +41,9 @@
     [self buildWebFolder];
     
     self.server = [[HTTPServer alloc] init];
-    
     [self.server setType:@"_http._tcp."];
-  
     [self.server setPort:12352];
-    
     [self.server setDocumentRoot:[self.class webFolderPath]];
-    
     [self.server setConnectionClass:[LCWebServerConnection class]];
     
     [self startServer];

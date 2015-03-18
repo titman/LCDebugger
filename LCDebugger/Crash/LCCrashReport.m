@@ -68,20 +68,25 @@
 {
     NSArray * crashLogs = self.crashLogs;
     
+    if (!crashLogs) {
+        
+        return @"Don't have any crash.";
+    }
+    
     if ([cmd isEqualToString:@"crashreport"]) {
         
         NSMutableString * info = [NSMutableString stringWithFormat:@"\n  * Count : %@\n", @(crashLogs.count)];
         
         for (NSDictionary * crash in crashLogs) {
             
-            [info appendFormat:@"   * Reason : %@ \nCallStackSymbols : %@\nTime : %@\n\n", crash[@"Reason"], crash[@"CallStackSymbols"], crash[@"Time"]];
+            [info appendFormat:@"   * Reason : %@ Time : %@\n\n", crash[@"Reason"], [NSDate dateWithTimeIntervalSince1970:[crash[@"Time"] doubleValue]]];
         }
         
         return info;
     }
     else if ([cmd isEqualToString:@"lastcrash"]){
         
-        return crashLogs.lastObject;
+        return [NSString stringWithFormat:@"   * Reason : %@ Time : %@\n\n", crashLogs.lastObject[@"Reason"], [NSDate dateWithTimeIntervalSince1970:[crashLogs.lastObject[@"Time"] doubleValue]]];
     }
     
     return @"";
