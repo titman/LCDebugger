@@ -99,22 +99,27 @@ SCNetworkReachabilityRef reachability;
 
 + (NSString *) localIPAddress
 {
-    NSString *localIP = nil;
-    struct ifaddrs *addrs;
+//    NSString *localIP = nil;
+//    struct ifaddrs *addrs;
+//    
+//    if (getifaddrs(&addrs)==0) {
+//        const struct ifaddrs *cursor = addrs;
+//        while (cursor != NULL) {
+//            if (cursor->ifa_addr->sa_family == AF_INET && (cursor->ifa_flags & IFF_LOOPBACK) == 0)
+//            {
+//                localIP = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
+//                break;
+//            }
+//            cursor = cursor->ifa_next;
+//        }
+//        freeifaddrs(addrs);
+//    }
+//    return localIP;
     
-    if (getifaddrs(&addrs)==0) {
-        const struct ifaddrs *cursor = addrs;
-        while (cursor != NULL) {
-            if (cursor->ifa_addr->sa_family == AF_INET && (cursor->ifa_flags & IFF_LOOPBACK) == 0)
-            {
-                localIP = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
-                break;
-            }
-            cursor = cursor->ifa_next;
-        }
-        freeifaddrs(addrs);
-    }
-    return localIP;
+    struct hostent *host = gethostbyname([[self hostname] UTF8String]);
+    if (!host) {herror("resolv"); return nil;}
+    struct in_addr **list = (struct in_addr **)host->h_addr_list;
+    return [NSString stringWithCString:inet_ntoa(*list[0]) encoding:NSUTF8StringEncoding];
 }
 
 // Matt Brown's get WiFi IP addy solution
