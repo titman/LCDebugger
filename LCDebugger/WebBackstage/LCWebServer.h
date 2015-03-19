@@ -34,6 +34,9 @@
 
 @interface LCWebServer : NSObject
 
+@property(nonatomic,assign) BOOL isRunning;
+@property(nonatomic,assign) NSInteger port;
+
 - (void) start;
 
 @end

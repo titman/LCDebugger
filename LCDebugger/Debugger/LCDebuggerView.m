@@ -44,6 +44,7 @@
 #import "LCRAMTableView.h"
 #import "LCNetworkTableView.h"
 #import "LCStorageTableView.h"
+#import "LCWebBackstageTableView.h"
 
 typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
@@ -353,6 +354,16 @@ LC_PROPERTY(copy) __LCDebuggerLogButtonDidTap didTapButton;
                 [UIView commitAnimations];
                 
             }];
+        }
+        else if (index == 2){
+            
+            [LCCMD analysisCommand:@"see crashlog"];
+        }
+        else if (index == 3){
+            
+            LCWebBackstageTableView * tableView = [[LCWebBackstageTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+            
+            [self.mainView changedCurrentView:tableView title:@"Web backstage"];
         }
     };
     

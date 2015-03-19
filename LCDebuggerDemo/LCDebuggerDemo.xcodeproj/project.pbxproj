@@ -36,6 +36,7 @@
 		13D08DD31AB80ABA005B04C8 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D08DCE1AB80ABA005B04C8 /* HTTPRedirectResponse.m */; };
 		13D08DD81AB80FDE005B04C8 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 13D08DD71AB80FDE005B04C8 /* index.html */; };
 		13D08DDB1AB82751005B04C8 /* LCWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D08DDA1AB82751005B04C8 /* LCWebServerConnection.m */; };
+		BF629DD41ABA82B700E6ED82 /* LCWebBackstageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF629DD31ABA82B700E6ED82 /* LCWebBackstageTableView.m */; };
 		BF63CF9C1AB14256000343FF /* UIWindow+LCUIWindowHook.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CF8B1AB14256000343FF /* UIWindow+LCUIWindowHook.m */; };
 		BF63CF9D1AB14256000343FF /* LCDebuggerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CF8E1AB14256000343FF /* LCDebuggerView.m */; };
 		BF63CF9E1AB14256000343FF /* LCLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF63CF911AB14256000343FF /* LCLog.mm */; };
@@ -161,6 +162,8 @@
 		13D08DD71AB80FDE005B04C8 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		13D08DD91AB82751005B04C8 /* LCWebServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebServerConnection.h; sourceTree = "<group>"; };
 		13D08DDA1AB82751005B04C8 /* LCWebServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebServerConnection.m; sourceTree = "<group>"; };
+		BF629DD21ABA82B700E6ED82 /* LCWebBackstageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebBackstageTableView.h; sourceTree = "<group>"; };
+		BF629DD31ABA82B700E6ED82 /* LCWebBackstageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebBackstageTableView.m; sourceTree = "<group>"; };
 		BF63CF8A1AB14256000343FF /* UIWindow+LCUIWindowHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LCUIWindowHook.h"; sourceTree = "<group>"; };
 		BF63CF8B1AB14256000343FF /* UIWindow+LCUIWindowHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LCUIWindowHook.m"; sourceTree = "<group>"; };
 		BF63CF8D1AB14256000343FF /* LCDebuggerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDebuggerView.h; sourceTree = "<group>"; };
@@ -533,6 +536,8 @@
 				BF7E3FE21AB6D1C400D03699 /* LCWebServer.m */,
 				13D08DD91AB82751005B04C8 /* LCWebServerConnection.h */,
 				13D08DDA1AB82751005B04C8 /* LCWebServerConnection.m */,
+				BF629DD21ABA82B700E6ED82 /* LCWebBackstageTableView.h */,
+				BF629DD31ABA82B700E6ED82 /* LCWebBackstageTableView.m */,
 				BF7E3FE41AB6D46600D03699 /* UIDevice+Reachability.h */,
 				BF7E3FE51AB6D46600D03699 /* UIDevice+Reachability.m */,
 			);
@@ -809,6 +814,7 @@
 				BFA64AA41AB2C278004139B6 /* LCGCD.m in Sources */,
 				BFA64A8D1AB2A926004139B6 /* UIView+LCUIViewFrame.m in Sources */,
 				BF7E3FD81AB6B22F00D03699 /* LCStorageInfoController.m in Sources */,
+				BF629DD41ABA82B700E6ED82 /* LCWebBackstageTableView.m in Sources */,
 				137F716D1AB3326E008207D3 /* LCRAMUsage.m in Sources */,
 				BF63CFB51AB144A9000343FF /* LCUtils.m in Sources */,
 				BFA64AB71AB2D3A3004139B6 /* LCUIKeyBoard.m in Sources */,

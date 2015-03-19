@@ -43,6 +43,8 @@
 #define INDEX_HTML_PATH [WEB_PATH stringByAppendingString:@"index.html"]
 #define IMAGE_PATH [WEB_PATH stringByAppendingString:@"preview.jpg"]
 
+#define PORT 11231
+
 @interface LCWebServer ()
 
 LC_PROPERTY(strong) HTTPServer * server;
@@ -68,9 +70,11 @@ LC_PROPERTY(strong) HTTPServer * server;
 {
     [self buildWebFolder];
     
+    self.port = PORT;
+    
     self.server = [[HTTPServer alloc] init];
     [self.server setType:@"_http._tcp."];
-    [self.server setPort:12352];
+    [self.server setPort:self.port];
     [self.server setDocumentRoot:WEB_PATH];
     [self.server setConnectionClass:[LCWebServerConnection class]];
     
@@ -100,14 +104,20 @@ LC_PROPERTY(strong) HTTPServer * server;
     [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] toPath:INDEX_HTML_PATH error:nil];
 }
 
+-(BOOL) isRunning
+{
+    return self.server.isRunning;
+}
 
 - (void)startServer
 {
     NSError * error;
     
-    if([self.server start:&error])
-    {
-        NSLog(@"Started HTTP Server on port %hu", [self.server listeningPort]);
+    if([self.server start:&error]){
+        
+        NSString * address = [NSString stringWithFormat:@"http://%@:%@", [UIDevice localIPAddress], @(self.port)];
+        
+        INFO(@"Web backstage address : %@", address);
     }
     else
     {
