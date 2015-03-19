@@ -51,7 +51,59 @@ typedef NS_ENUM(NSInteger, LC_CMD_TYPE) {
 
 @interface LCCMD : NSObject
 
+/**
+    @brief   The method could dynamically add a command for a Class.
+ 
+    @param   cmd a string describing the cmd.
+    @param   cmdType LC_CMD_TYPE, LC_CMD_TYPE_SEE "see" LC_CMD_TYPE_ACTION "action"
+    @param   impClass implementation class.
+    @param   cmdDescription a string describing usage of the cmd .
+
+    @note    example:
+ 
+             [LCCMD addClassCMD:@"application" CMDType:LC_CMD_TYPE_SEE IMPClass:[AppDelegate class] CMDDescription:@"Test"];
+ 
+             then implement <LC_CMD_IMP> protocol,
+ 
+             +(NSString *)CMDSee:(NSString *)cmd{
+                 if([cmd isEqualToString:@"application"])
+                    return @"Response command!"
+                 };
+                 return @"";
+             }
+             
+             at last, when input command at local or remote debug, 
+             the string @"Response command!" will output on the device screen.
+ 
+ */
 +(BOOL) addClassCMD:(NSString *)cmd CMDType:(LC_CMD_TYPE)cmdType IMPClass:(Class <LC_CMD_IMP>)impClass CMDDescription:(NSString *)cmdDescription;
+
+
+/**
+    @brief   The method could dynamically add a command for a object.
+ 
+    @param   cmd a string describing the cmd.
+    @param   cmdType LC_CMD_TYPE, LC_CMD_TYPE_SEE "see" LC_CMD_TYPE_ACTION "action"
+    @param   impObject implementation object.
+    @param   cmdDescription a string describing usage of the cmd .
+ 
+    @note    example:
+ 
+             [LCCMD addClassCMD:@"application" CMDType:LC_CMD_TYPE_SEE IMPObject:anObject CMDDescription:@"Test"];
+ 
+             then implement <LC_CMD_IMP> protocol,
+ 
+             -(NSString *)CMDSee:(NSString *)cmd{
+                 if([cmd isEqualToString:@"application"])
+                     return @"Response command!"
+                 };
+                 return @"";
+             }
+ 
+             at last, when input command at local or remote debug,
+             the string @"Response command!" will output on the device screen or remote debug.
+ 
+ */
 +(BOOL) addObjectCMD:(NSString *)cmd CMDType:(LC_CMD_TYPE)cmdType IMPObject:(NSObject <LC_CMD_IMP> *)impObject CMDDescription:(NSString *)cmdDescription;
 
 +(BOOL) analysisCommand:(NSString *)command;
