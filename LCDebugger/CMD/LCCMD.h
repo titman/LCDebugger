@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, LC_CMD_TYPE) {
     @param   impClass implementation class.
     @param   cmdDescription a string describing usage of the cmd .
 
-    @note    example:
+    @example use this method
  
              [LCCMD addClassCMD:@"application" CMDType:LC_CMD_TYPE_SEE IMPClass:[AppDelegate class] CMDDescription:@"Test"];
  
@@ -87,7 +87,7 @@ typedef NS_ENUM(NSInteger, LC_CMD_TYPE) {
     @param   impObject implementation object.
     @param   cmdDescription a string describing usage of the cmd .
  
-    @note    example:
+    @example use this method
  
              [LCCMD addClassCMD:@"application" CMDType:LC_CMD_TYPE_SEE IMPObject:anObject CMDDescription:@"Test"];
  
