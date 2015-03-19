@@ -1,9 +1,33 @@
 //
-//  LCWebServer.m
-//  LCDebuggerDemo
 //
-//  Created by Licheng Guo . http://nsobject.me/ on 15/3/16.
-//  Copyright (c) 2015年 Licheng Guo . http://nsobject.me/. All rights reserved.
+//      _|          _|_|_|
+//      _|        _|
+//      _|        _|
+//      _|        _|
+//      _|_|_|_|    _|_|_|
+//
+//
+//  Copyright (c) 2014-2015, Licheng Guo. ( http://nsobject.me )
+//  http://github.com/titman
+//
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a
+//  copy of this software and associated documentation files (the "Software"),
+//  to deal in the Software without restriction, including without limitation
+//  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+//  and/or sell copies of the Software, and to permit persons to whom the
+//  Software is furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+//  IN THE SOFTWARE.
 //
 
 #import "LCWebServer.h"
@@ -15,9 +39,13 @@
 #import "LCTools.h"
 #import "LCWebServerConnection.h"
 
+#define WEB_PATH [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingString:@"/Caches/LCWeb/"]
+#define INDEX_HTML_PATH [WEB_PATH stringByAppendingString:@"index.html"]
+#define IMAGE_PATH [WEB_PATH stringByAppendingString:@"preview.jpg"]
+
 @interface LCWebServer ()
 
-@property(nonatomic,strong) HTTPServer * server;
+LC_PROPERTY(strong) HTTPServer * server;
 
 @end
 
@@ -43,7 +71,7 @@
     self.server = [[HTTPServer alloc] init];
     [self.server setType:@"_http._tcp."];
     [self.server setPort:12352];
-    [self.server setDocumentRoot:[self.class webFolderPath]];
+    [self.server setDocumentRoot:WEB_PATH];
     [self.server setConnectionClass:[LCWebServerConnection class]];
     
     [self startServer];
@@ -61,27 +89,20 @@
 
     NSData * data = UIImageJPEGRepresentation(image, 0.5);
     
-    [data writeToFile:[[self.class webFolderPath] stringByAppendingString:@"preview.jpg"] atomically:YES];
+    [data writeToFile:IMAGE_PATH atomically:YES];
 }
 
 -(void) buildWebFolder
 {
-    [self.class touchPath:[self.class webFolderPath]];
+    [self.class touchPath:WEB_PATH];
     
-    [[NSFileManager defaultManager] removeItemAtPath:[[self.class webFolderPath] stringByAppendingString:@"index.html"] error:nil];
-    
-    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] toPath:[[self.class webFolderPath] stringByAppendingString:@"index.html"] error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:INDEX_HTML_PATH error:nil];
+    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] toPath:INDEX_HTML_PATH error:nil];
 }
 
-+(NSString *) webFolderPath
-{
-    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    return [[paths objectAtIndex:0] stringByAppendingFormat:@"/Caches/LCWeb/"];
-}
 
 - (void)startServer
 {
-    // Start the server (and check for problems)
     NSError * error;
     
     if([self.server start:&error])
@@ -93,101 +114,5 @@
         NSLog(@"Error starting HTTP Server: %@", error);
     }
 }
-
-//- (void) startServer
-//{
-//    static struct sockaddr_in serv_addr;
-//    
-//    // Set up socket
-//    if((self.listenfd = socket(AF_INET, SOCK_STREAM,0)) < 0)
-//    {
-//        self.isServing = NO;
-//        
-//        DO_CALLBACK(webServerCouldNotBeEstablished, nil);
-//        return;
-//    }
-//    
-//    INFO(@"Web server start...");
-//    
-//    // Serve to a random port
-//    serv_addr.sin_family = AF_INET;
-//    serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-//    serv_addr.sin_port = 0;
-//    
-//    // Bind
-//    if(bind(self.listenfd, (struct sockaddr *)&serv_addr,sizeof(serv_addr)) <0)
-//    {
-//        self.isServing = NO;
-//        DO_CALLBACK(webServerCouldNotBeEstablished, nil);
-//        return;
-//    }
-//    
-//    // Find out what port number was chosen.
-//    int namelen = sizeof(serv_addr);
-//    if (getsockname(self.listenfd, (struct sockaddr *)&serv_addr, (void *) &namelen) < 0) {
-//        close(self.listenfd);
-//        self.isServing = NO;
-//        DO_CALLBACK(webServerCouldNotBeEstablished, nil);
-//        return;
-//    }
-//    
-//    self.chosenPort = ntohs(serv_addr.sin_port);
-//    
-//    // Listen
-//    if(listen(self.listenfd, 64) < 0)
-//    {
-//        self.isServing = NO;
-//        DO_CALLBACK(webServerCouldNotBeEstablished, nil);
-//        return;
-//    } 
-//    
-//    DO_CALLBACK(webServerWasEstablished, nil);
-//    [NSThread detachNewThreadSelector:@selector(listenForRequests) toTarget:self withObject:NULL];
-//}
-//
-//- (void) listenForRequests
-//{
-//    INFO(@"Web server request listenning...");
-//
-//    static struct sockaddr_in cli_addr;
-//    socklen_t length = sizeof(cli_addr);
-//    
-//    while (1 > 0) {
-//        if (!self.isServing) return;
-//        
-//        if ((self.socketfd = accept(self.listenfd, (struct sockaddr *)&cli_addr, &length)) < 0)
-//        {
-//            self.isServing = NO;
-//            DO_CALLBACK(webServerWasLost, nil);
-//            return;
-//        }
-//        
-//        [self handleWebRequest:self.socketfd];
-//    }
-//}
-//
-//- (void) handleWebRequest:(int) fd
-//{
-//    // recover request
-//    NSString *request = [self getRequest:fd];
-//    
-//    // Create a category and implement this meaningfully
-//    NSMutableString *outcontent = [NSMutableString stringWithContentsOfFile:[[self.class webFolderPath] stringByAppendingString:@"/cmd.html"] encoding:NSUTF8StringEncoding error:nil];
-////    [outcontent appendString:@"HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n"];
-////    [outcontent appendString:@"<html><h1>我正在等....</h1><h3>阿布爱nono</h3>"];
-////    [outcontent appendString:@"<p>来填充我吧.\n"];
-////    [outcontent appendString:@"Please quickly!</p>"];
-////    [outcontent appendFormat:@"<pre>%@</pre></html>", request];
-//    write (fd, [outcontent UTF8String], [outcontent length]);
-//    close(fd);
-//}
-//
-//- (NSString *) getRequest:(int)fd
-//{
-//    static char buffer[BUFSIZE+1];
-//    ssize_t len = read(fd, buffer, BUFSIZE);
-//    buffer[len] = '\0';
-//    return [NSString stringWithCString:buffer encoding:NSUTF8StringEncoding];
-//}
 
 @end

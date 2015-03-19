@@ -1,36 +1,59 @@
 //
-//  UIView+UIViewFrame.h
-//  LCFramework
-
-//  Created by Licheng Guo . ( SUGGESTIONS & BUG titm@tom.com ) on 13-9-21.
-//  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
+//      _|          _|_|_|
+//      _|        _|
+//      _|        _|
+//      _|        _|
+//      _|_|_|_|    _|_|_|
+//
+//
+//  Copyright (c) 2014-2015, Licheng Guo. ( http://nsobject.me )
+//  http://github.com/titman
+//
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a
+//  copy of this software and associated documentation files (the "Software"),
+//  to deal in the Software without restriction, including without limitation
+//  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+//  and/or sell copies of the Software, and to permit persons to whom the
+//  Software is furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+//  IN THE SOFTWARE.
 //
 
 #import <UIKit/UIKit.h>
+#import "LCTools.h"
 
 @interface UIView (LCUIViewFrame)
 
-@property(nonatomic,assign) CGPoint xy;
-@property(nonatomic,assign) CGSize viewSize;
+LC_PROPERTY(assign) CGPoint xy;
+LC_PROPERTY(assign) CGSize viewSize;
 
-@property(nonatomic,assign) float viewCenterX;
-@property(nonatomic,assign) float viewCenterY;
-@property(nonatomic,assign) float viewFrameX;
-@property(nonatomic,assign) float viewFrameY;
-@property(nonatomic,assign) float viewFrameWidth;
-@property(nonatomic,assign) float viewFrameHeight;
+LC_PROPERTY(assign) CGFloat viewCenterX;
+LC_PROPERTY(assign) CGFloat viewCenterY;
+LC_PROPERTY(assign) CGFloat viewFrameX;
+LC_PROPERTY(assign) CGFloat viewFrameY;
+LC_PROPERTY(assign) CGFloat viewFrameWidth;
+LC_PROPERTY(assign) CGFloat viewFrameHeight;
 
-@property(nonatomic,assign,readonly) float viewRightX;
-@property(nonatomic,assign,readonly) float viewBottomY;
+LC_PROPERTY(readonly) CGFloat viewRightX;
+LC_PROPERTY(readonly) CGFloat viewBottomY;
 
-@property(nonatomic,assign,readonly) float viewMidX;
-@property(nonatomic,assign,readonly) float viewMidY;
+LC_PROPERTY(readonly) CGFloat viewMidX;
+LC_PROPERTY(readonly) CGFloat viewMidY;
 
-@property(nonatomic,assign,readonly) float viewMidWidth;
-@property(nonatomic,assign,readonly) float viewMidHeight;
+LC_PROPERTY(readonly) CGFloat viewMidWidth;
+LC_PROPERTY(readonly) CGFloat viewMidHeight;
 
--(instancetype) initWithX:(float)x Y:(float)y;
+-(instancetype) initWithX:(CGFloat)x Y:(CGFloat)y;
 
 @end

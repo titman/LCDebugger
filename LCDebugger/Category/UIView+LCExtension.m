@@ -1,11 +1,33 @@
 //
-//  UIView+Extension.m
-//  LCFramework
-
-//  Created by Licheng Guo . ( SUGGESTIONS & BUG titm@tom.com ) on 13-10-11.
-//  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
+//      _|          _|_|_|
+//      _|        _|
+//      _|        _|
+//      _|        _|
+//      _|_|_|_|    _|_|_|
+//
+//
+//  Copyright (c) 2014-2015, Licheng Guo. ( http://nsobject.me )
+//  http://github.com/titman
+//
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a
+//  copy of this software and associated documentation files (the "Software"),
+//  to deal in the Software without restriction, including without limitation
+//  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+//  and/or sell copies of the Software, and to permit persons to whom the
+//  Software is furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+//  IN THE SOFTWARE.
 //
 
 #import "UIView+LCExtension.h"
@@ -60,14 +82,6 @@
 {
 	UIView * view = self;
 	
-    //	while ( nil != view )
-    //	{
-    //		if ( nil == view.superview )
-    //			break;
-    //
-    //		view = view.superview;
-    //	}
-    
 	UIResponder * nextResponder = [view nextResponder];
     
 	if ( nextResponder && [nextResponder isKindOfClass:[UIViewController class]] )
@@ -77,44 +91,5 @@
 	
 	return nil;
 }
-
-//-(NSString *) signalName
-//{
-//    NSObject * obj = objc_getAssociatedObject( self, @"__SignalName" );
-//    
-//	if ( obj && [obj isKindOfClass:[NSString class]] ){
-//        return (NSString *)obj;
-//    }
-//    else{
-//        
-//        return nil;
-//    }
-//    
-//}
-//
-//-(void) setSignalName:(NSString *)signalName
-//{
-//    objc_setAssociatedObject( self, @"__SignalName", signalName, OBJC_ASSOCIATION_RETAIN_NONATOMIC );
-//
-//    if (self.tapGesture) {
-//        [self removeGestureRecognizer:self.tapGesture];
-//    }
-//    
-//    if (signalName) {
-//        
-//        [self addTapTarget:self selector:@selector(__didTapAction)];
-//    }
-//    else{
-//        
-//    }
-//}
-//
-//-(void) __didTapAction
-//{
-//    if ( self.signalName )
-//    {
-//        [self sendUISignal:self.signalName];
-//    }
-//}
 
 @end

@@ -1,11 +1,33 @@
 //
-//  UIView+UIViewFrame.m
-//  LCFramework
-
-//  Created by Licheng Guo . ( SUGGESTIONS & BUG titm@tom.com ) on 13-9-21.
-//  Copyright (c) 2014年 Licheng Guo iOS developer ( http://nsobject.me ).All rights reserved.
-//  Also see the copyright page ( http://nsobject.me/copyright.rtf ).
 //
+//      _|          _|_|_|
+//      _|        _|
+//      _|        _|
+//      _|        _|
+//      _|_|_|_|    _|_|_|
+//
+//
+//  Copyright (c) 2014-2015, Licheng Guo. ( http://nsobject.me )
+//  http://github.com/titman
+//
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a
+//  copy of this software and associated documentation files (the "Software"),
+//  to deal in the Software without restriction, including without limitation
+//  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+//  and/or sell copies of the Software, and to permit persons to whom the
+//  Software is furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+//  IN THE SOFTWARE.
 //
 
 #import "UIView+LCUIViewFrame.h"
@@ -13,7 +35,7 @@
 
 @implementation UIView (LCUIViewFrame)
 
--(instancetype) initWithX:(float)x Y:(float)y
+-(instancetype) initWithX:(CGFloat)x Y:(CGFloat)y
 {
     if (self = [self initWithFrame:CGRectMake(x,y,0,0)]) {
         
@@ -27,22 +49,22 @@
     return CGPointMake(self.viewFrameX, self.viewFrameY);
 }
 
--(float) viewCenterX
+-(CGFloat) viewCenterX
 {
     return self.center.x;
 }
 
--(void) setViewCenterX:(float)viewCenterX
+-(void) setViewCenterX:(CGFloat)viewCenterX
 {
     self.center = LC_POINT(viewCenterX, self.viewCenterY);
 }
 
--(float) viewCenterY
+-(CGFloat) viewCenterY
 {
     return self.center.y;
 }
 
--(void) setViewCenterY:(float)viewCenterY
+-(void) setViewCenterY:(CGFloat)viewCenterY
 {
     self.center = LC_POINT(self.viewCenterX, viewCenterY);
 }
@@ -52,7 +74,7 @@
     self.frame = LC_RECT_CREATE(xy.x, xy.y, self.viewFrameWidth, self.viewFrameHeight);
 }
 
--(float) viewFrameX
+-(CGFloat) viewFrameX
 {
     return self.frame.origin.x;
 }
@@ -68,67 +90,67 @@
     self.viewFrameHeight = viewSize.height;
 }
 
--(void) setViewFrameX:(float)newViewFrameX
+-(void) setViewFrameX:(CGFloat)newViewFrameX
 {
     self.frame = LC_RECT_CREATE(newViewFrameX, self.viewFrameY, self.viewFrameWidth, self.viewFrameHeight);
 }
 
--(float) viewFrameY
+-(CGFloat) viewFrameY
 {
     return self.frame.origin.y;
 }
 
--(void) setViewFrameY:(float)newViewFrameY
+-(void) setViewFrameY:(CGFloat)newViewFrameY
 {
     self.frame = LC_RECT_CREATE(self.viewFrameX, newViewFrameY, self.viewFrameWidth, self.viewFrameHeight);
 }
 
--(float) viewFrameWidth
+-(CGFloat) viewFrameWidth
 {
     return self.frame.size.width;
 }
 
--(void) setViewFrameWidth:(float)newViewFrameWidth
+-(void) setViewFrameWidth:(CGFloat)newViewFrameWidth
 {
     self.frame = LC_RECT_CREATE(self.viewFrameX, self.viewFrameY, newViewFrameWidth, self.viewFrameHeight);
 }
 
--(float) viewFrameHeight
+-(CGFloat) viewFrameHeight
 {
     return self.frame.size.height;
 }
 
--(void) setViewFrameHeight:(float)newViewFrameHeight
+-(void) setViewFrameHeight:(CGFloat)newViewFrameHeight
 {
     self.frame = LC_RECT_CREATE(self.viewFrameX, self.viewFrameY, self.viewFrameWidth, newViewFrameHeight);
 }
 
--(float) viewRightX
+-(CGFloat) viewRightX
 {
     return self.viewFrameX+self.viewFrameWidth;
 }
 
--(float) viewBottomY
+-(CGFloat) viewBottomY
 {
     return self.viewFrameY+self.viewFrameHeight;
 }
 
--(float) viewMidX
+-(CGFloat) viewMidX
 {
     return self.viewFrameX/2;
 }
 
--(float) viewMidY
+-(CGFloat) viewMidY
 {
     return self.viewFrameY/2;
 }
 
--(float) viewMidWidth
+-(CGFloat) viewMidWidth
 {
     return self.viewFrameWidth/2;
 }
 
--(float) viewMidHeight
+-(CGFloat) viewMidHeight
 {
     return self.viewFrameHeight/2;
 }
