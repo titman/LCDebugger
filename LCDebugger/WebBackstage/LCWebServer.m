@@ -113,6 +113,9 @@ LC_PROPERTY(strong) HTTPServer * server;
     
     [[NSFileManager defaultManager] removeItemAtPath:INDEX_HTML_PATH error:nil];
     [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] toPath:INDEX_HTML_PATH error:nil];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:[WEB_PATH stringByAppendingString:@"/tree/"] error:nil];
+    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"tree" ofType:@""] toPath:[WEB_PATH stringByAppendingString:@"/tree/"] error:nil];
 }
 
 -(BOOL) isRunning

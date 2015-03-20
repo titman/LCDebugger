@@ -30,9 +30,13 @@
 //  IN THE SOFTWARE.
 //
 
+#import "LCDebuggerImport.h"
 #import "LCWebServerConnection.h"
 #import "HTTPDynamicFileResponse.h"
+#import "HTTPDataResponse.h"
 #import "LCCMD.h"
+#import "LCHandleViewTreeRequest.h"
+#import "LCHandleViewHighlightRequest.h"
 
 @implementation LCWebServerConnection
 
@@ -47,9 +51,7 @@
         return nil;
     }
     
-    NSRange range = [path rangeOfString:@"/?cmd="];
-    
-    if (range.length)
+    if ([path rangeOfString:@"/?cmd="].length)
     {
         NSArray * parmater = [path componentsSeparatedByString:@"/?cmd="];
         
@@ -58,6 +60,27 @@
         }
         
         return [super httpResponseForMethod:method URI:path];
+    }
+    else if ([path rangeOfString:@"loadViewTree"].length)
+    {
+        NSDictionary * dic = [LCHandleViewTreeRequest.LCS handleRequestPath:path];
+        
+        NSData * data = [NSJSONSerialization dataWithJSONObject:@{@"state":@"success",@"data":dic} options:0 error:nil];
+        
+        return [[HTTPDataResponse alloc] initWithData:data];
+
+    }
+    else if ([path rangeOfString:@"highlightView"].length)
+    {
+        NSDictionary * dic = [LCHandleViewHighlightRequest.LCS handleRequestPath:path];
+        
+        NSData * data = [NSJSONSerialization dataWithJSONObject:@{@"state":@"success",@"data":dic} options:0 error:nil];
+        
+        return [[HTTPDataResponse alloc] initWithData:data];
+    }
+    else if ([path rangeOfString:@"move"].length)
+    {
+        
     }
     
     return [super httpResponseForMethod:method URI:path];

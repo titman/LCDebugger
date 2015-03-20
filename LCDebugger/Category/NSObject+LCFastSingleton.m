@@ -60,7 +60,7 @@ static NSMutableDictionary * __instanceDatasource = nil;
         
         [self setObjectToInstanceDatasource:__singleton__];
         
-        INFO(@"[LCFastSingleton] %@ singleton inited.",[__singleton__ class]);
+        //INFO(@"[LCFastSingleton] %@ singleton inited.",[__singleton__ class]);
         
         return __singleton__;
         
