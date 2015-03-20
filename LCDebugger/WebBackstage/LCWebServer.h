@@ -38,5 +38,6 @@
 @property(nonatomic,assign) NSInteger port;
 
 - (void) start;
+- (void) stop;
 
 @end

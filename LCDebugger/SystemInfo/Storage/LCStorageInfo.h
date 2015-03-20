@@ -33,6 +33,7 @@
 #import <Foundation/Foundation.h>
 
 @interface LCStorageInfo : NSObject
+
 @property (nonatomic, assign) uint64_t      totalSapce;
 @property (nonatomic, assign) uint64_t      usedSpace;
 @property (nonatomic, assign) uint64_t      freeSpace;

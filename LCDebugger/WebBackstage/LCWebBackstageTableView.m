@@ -52,6 +52,7 @@
             switchControl.viewFrameX = LC_DEVICE_WIDTH - 10 - switchControl.viewFrameWidth;
             switchControl.viewFrameY = 22 - switchControl.viewMidHeight;
             switchControl.tag = 102;
+            [switchControl addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
             [cell addSubview:switchControl];
         }
 
@@ -100,6 +101,16 @@
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 2;
+}
+
+-(void) switchAction:(UISwitch *)control
+{
+    if (control.on) {
+        [LCWebServer.LCS start];
+    }
+    else{
+        [LCWebServer.LCS stop];
+    }
 }
 
 @end

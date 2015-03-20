@@ -37,7 +37,7 @@
 
 /**
  @class
- @brief If you want do some Settings in the debugger view.
+ @brief If you want to do some settings on the debugger view.
  */
 @property(nonatomic,strong) LCDebuggerView * debuggerView;
 

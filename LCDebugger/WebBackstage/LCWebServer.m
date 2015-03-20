@@ -70,6 +70,10 @@ LC_PROPERTY(strong) HTTPServer * server;
 {
     [self buildWebFolder];
     
+    if (self.server) {
+        [self.server stop];
+    }
+    
     self.port = PORT;
     
     self.server = [[HTTPServer alloc] init];
@@ -81,6 +85,13 @@ LC_PROPERTY(strong) HTTPServer * server;
     [self startServer];
     
     [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateImage) userInfo:nil repeats:YES];
+}
+
+-(void) stop
+{
+    if (self.server) {
+        [self.server stop];
+    }
 }
 
 -(void) updateImage
