@@ -37,6 +37,7 @@
 #include <ifaddrs.h>
 #import <dlfcn.h>
 #import "UIDevice+Reachability.h"
+#import "LCLog.h"
 
 @implementation UIDevice (Reachability)
 SCNetworkConnectionFlags connectionFlags;
@@ -273,7 +274,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkConne
 {
 	if (![watcher conformsToProtocol:@protocol(ReachabilityWatcher)]) 
 	{
-		NSLog(@"Watcher must conform to ReachabilityWatcher protocol. Cannot continue.");
+		ERROR(@"Watcher must conform to ReachabilityWatcher protocol. Cannot continue.");
 		return NO;
 	}
 	
@@ -284,14 +285,14 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkConne
 	{
 		if(!SCNetworkReachabilityScheduleWithRunLoop(reachability, CFRunLoopGetCurrent(), kCFRunLoopCommonModes)) 
 		{
-			NSLog(@"Error: Could not schedule reachability");
+			ERROR(@"Error: Could not schedule reachability");
 			SCNetworkReachabilitySetCallback(reachability, NULL, NULL);
 			return NO;
 		}
 	} 
 	else 
 	{
-		NSLog(@"Error: Could not set reachability callback");
+		ERROR(@"Error: Could not set reachability callback");
 		return NO;
 	}
 	
@@ -302,9 +303,9 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkConne
 {
 	SCNetworkReachabilitySetCallback(reachability, NULL, NULL);
 	if (SCNetworkReachabilityUnscheduleFromRunLoop(reachability, CFRunLoopGetCurrent(), kCFRunLoopCommonModes))
-		NSLog(@"Unscheduled reachability");
+		ERROR(@"Unscheduled reachability");
 	else
-		NSLog(@"Error: Could not unschedule reachability");
+		ERROR(@"Error: Could not unschedule reachability");
 	
 	CFRelease(reachability);
 	reachability = nil;

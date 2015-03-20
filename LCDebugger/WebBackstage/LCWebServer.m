@@ -74,8 +74,6 @@ LC_PROPERTY(strong) HTTPServer * server;
         [self.server stop];
     }
     
-    self.port = PORT;
-    
     self.server = [[HTTPServer alloc] init];
     [self.server setType:@"_http._tcp."];
     [self.server setPort:self.port];
@@ -118,6 +116,11 @@ LC_PROPERTY(strong) HTTPServer * server;
     [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"tree" ofType:@""] toPath:[WEB_PATH stringByAppendingString:@"/tree/"] error:nil];
 }
 
+-(NSInteger) port
+{
+    return PORT;
+}
+
 -(BOOL) isRunning
 {
     return self.server.isRunning;
@@ -135,7 +138,7 @@ LC_PROPERTY(strong) HTTPServer * server;
     }
     else
     {
-        NSLog(@"Error starting HTTP Server: %@", error);
+        ERROR(@"Error starting HTTP Server: %@", error);
     }
 }
 

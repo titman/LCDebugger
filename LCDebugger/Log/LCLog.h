@@ -39,11 +39,11 @@
 
 
 #undef  INFO
-#define INFO(desc,...) LCInfo(desc, ##__VA_ARGS__) /* Special "NSLog". For example:LC ✨INFO✨ ⥤ hello word! */
+#define INFO(desc,...) LCInfo(desc, ##__VA_ARGS__)
 
 
 #undef  ERROR
-#define ERROR(desc,...) LCError(LC_THIS_FILE, LC_THIS_METHOD, LC_THIS_LINE, desc, ##__VA_ARGS__) /* The ERROR is not affected by LC_DEBUG_ENABLE and could set the local filelogs. For example:LC 👿ERROR👿 ⥤ error warning! */
+#define ERROR(desc,...) LCError(LC_THIS_FILE, LC_THIS_METHOD, LC_THIS_LINE, desc, ##__VA_ARGS__)
 
 
 #undef  CMDLog
