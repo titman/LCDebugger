@@ -4,7 +4,7 @@ LCDebugger is a local/remote debugging tool. and you could input some command as
 
 ## What LCDebugger Does
 
-- Remote real-time preview screen of device .
+- Real-time remote  preview screen of device .
 - Remote control device.
 - Remote viewing view tree and change frame to one of views.
 - Command(CMD) module.
@@ -20,7 +20,12 @@ LCDebugger build a local web server for remote debugging. Use CMD module to inte
 
 ## Getting Started
 
-## Video
+## Preview
+
+### Real-time remote preview screen of device
+### Remote preview view tree and change it!
+### Remote perform some command
+### 3d view tree
 
 ## Version History
 
