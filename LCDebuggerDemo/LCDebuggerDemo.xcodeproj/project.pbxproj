@@ -15,6 +15,7 @@
 		1362E4321ABEFBDB00453886 /* NSObject+ViewTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E42C1ABEFBDB00453886 /* NSObject+ViewTree.m */; };
 		1362E4331ABEFBDB00453886 /* UIDevice+Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E42E1ABEFBDB00453886 /* UIDevice+Reachability.m */; };
 		1362E4341ABEFBDB00453886 /* UIView+Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E4301ABEFBDB00453886 /* UIView+Observer.m */; };
+		1362E5A11ABF1E7400453886 /* web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1362E5A01ABF1E7400453886 /* web.bundle */; };
 		137F716B1AB3326E008207D3 /* LCRAMInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71661AB3326E008207D3 /* LCRAMInfo.m */; };
 		137F716C1AB3326E008207D3 /* LCRAMInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71681AB3326E008207D3 /* LCRAMInfoController.m */; };
 		137F716D1AB3326E008207D3 /* LCRAMUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F716A1AB3326E008207D3 /* LCRAMUsage.m */; };
@@ -41,7 +42,6 @@
 		13D08DD11AB80ABA005B04C8 /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D08DCA1AB80ABA005B04C8 /* HTTPDynamicFileResponse.m */; };
 		13D08DD21AB80ABA005B04C8 /* HTTPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D08DCC1AB80ABA005B04C8 /* HTTPFileResponse.m */; };
 		13D08DD31AB80ABA005B04C8 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D08DCE1AB80ABA005B04C8 /* HTTPRedirectResponse.m */; };
-		13D08DD81AB80FDE005B04C8 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 13D08DD71AB80FDE005B04C8 /* index.html */; };
 		13D08DDB1AB82751005B04C8 /* LCWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D08DDA1AB82751005B04C8 /* LCWebServerConnection.m */; };
 		BF629DD41ABA82B700E6ED82 /* LCWebBackstageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF629DD31ABA82B700E6ED82 /* LCWebBackstageTableView.m */; };
 		BF63CF9C1AB14256000343FF /* UIWindow+LCUIWindowHook.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CF8B1AB14256000343FF /* UIWindow+LCUIWindowHook.m */; };
@@ -69,7 +69,6 @@
 		BF63CFDD1AB14F82000343FF /* LCDeviceSpecificUI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFDC1AB14F82000343FF /* LCDeviceSpecificUI.m */; };
 		BF63CFE31AB15DC5000343FF /* LCDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFE01AB15DC5000343FF /* LCDeviceInfo.m */; };
 		BF63CFE41AB15DC5000343FF /* LCDeviceInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFE21AB15DC5000343FF /* LCDeviceInfoController.m */; };
-		BF6925E91ABBED6500B29CF3 /* tree in Resources */ = {isa = PBXBuildFile; fileRef = BF6925E81ABBED6500B29CF3 /* tree */; };
 		BF69262F1ABC145E00B29CF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF69262E1ABC145E00B29CF3 /* Main.storyboard */; };
 		BF6926341ABC146600B29CF3 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6926311ABC146600B29CF3 /* MasterViewController.m */; };
 		BF6926351ABC146600B29CF3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6926331ABC146600B29CF3 /* DetailViewController.m */; };
@@ -132,6 +131,7 @@
 		1362E4301ABEFBDB00453886 /* UIView+Observer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Observer.m"; sourceTree = "<group>"; };
 		1362E4351ABEFCA200453886 /* LCSystemInfoImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSystemInfoImport.h; sourceTree = "<group>"; };
 		1362E4361ABEFD5F00453886 /* LCDebuggerImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDebuggerImport.h; sourceTree = "<group>"; };
+		1362E5A01ABF1E7400453886 /* web.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = web.bundle; sourceTree = "<group>"; };
 		137F71651AB3326E008207D3 /* LCRAMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfo.h; sourceTree = "<group>"; };
 		137F71661AB3326E008207D3 /* LCRAMInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRAMInfo.m; sourceTree = "<group>"; };
 		137F71671AB3326E008207D3 /* LCRAMInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfoController.h; sourceTree = "<group>"; };
@@ -186,7 +186,6 @@
 		13D08DCC1AB80ABA005B04C8 /* HTTPFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPFileResponse.m; sourceTree = "<group>"; };
 		13D08DCD1AB80ABA005B04C8 /* HTTPRedirectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRedirectResponse.h; sourceTree = "<group>"; };
 		13D08DCE1AB80ABA005B04C8 /* HTTPRedirectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRedirectResponse.m; sourceTree = "<group>"; };
-		13D08DD71AB80FDE005B04C8 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		13D08DD91AB82751005B04C8 /* LCWebServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebServerConnection.h; sourceTree = "<group>"; };
 		13D08DDA1AB82751005B04C8 /* LCWebServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebServerConnection.m; sourceTree = "<group>"; };
 		BF629DD21ABA82B700E6ED82 /* LCWebBackstageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebBackstageTableView.h; sourceTree = "<group>"; };
@@ -239,7 +238,6 @@
 		BF63CFE01AB15DC5000343FF /* LCDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDeviceInfo.m; sourceTree = "<group>"; };
 		BF63CFE11AB15DC5000343FF /* LCDeviceInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDeviceInfoController.h; sourceTree = "<group>"; };
 		BF63CFE21AB15DC5000343FF /* LCDeviceInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDeviceInfoController.m; sourceTree = "<group>"; };
-		BF6925E81ABBED6500B29CF3 /* tree */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tree; sourceTree = "<group>"; };
 		BF69262E1ABC145E00B29CF3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF6926301ABC146600B29CF3 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BF6926311ABC146600B29CF3 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
@@ -381,15 +379,6 @@
 				13BB1AB91AB53D13007FC7EB /* LCGPUTableView.m */,
 			);
 			path = GPU;
-			sourceTree = "<group>";
-		};
-		13D08DD61AB80FDE005B04C8 /* web */ = {
-			isa = PBXGroup;
-			children = (
-				13D08DD71AB80FDE005B04C8 /* index.html */,
-				BF6925E81ABBED6500B29CF3 /* tree */,
-			);
-			path = web;
 			sourceTree = "<group>";
 		};
 		BF63CF891AB14256000343FF /* Category */ = {
@@ -584,9 +573,9 @@
 		BF7E3FE01AB6D19000D03699 /* WebBackstage */ = {
 			isa = PBXGroup;
 			children = (
-				13D08DD61AB80FDE005B04C8 /* web */,
 				BF7E3FEF1AB6E34E00D03699 /* http */,
 				1362E41B1ABEFAAB00453886 /* handleRequest */,
+				1362E5A01ABF1E7400453886 /* web.bundle */,
 				BF7E3FE11AB6D1C400D03699 /* LCWebServer.h */,
 				BF7E3FE21AB6D1C400D03699 /* LCWebServer.m */,
 				13D08DD91AB82751005B04C8 /* LCWebServerConnection.h */,
@@ -832,12 +821,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D08DD81AB80FDE005B04C8 /* index.html in Resources */,
 				BF63CFD21AB14B0D000343FF /* LCGLBubbleEffect.fsh in Resources */,
 				BFBFBD241AAF0BB400854A11 /* LaunchScreen.xib in Resources */,
 				BF69262F1ABC145E00B29CF3 /* Main.storyboard in Resources */,
 				BFBFBD211AAF0BB400854A11 /* Images.xcassets in Resources */,
-				BF6925E91ABBED6500B29CF3 /* tree in Resources */,
+				1362E5A11ABF1E7400453886 /* web.bundle in Resources */,
 				BF63CFD41AB14B0D000343FF /* LCGLBubbleEffect.vsh in Resources */,
 				BFA64AA11AB2BB40004139B6 /* LOGO.txt in Resources */,
 			);
