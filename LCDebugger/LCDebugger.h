@@ -33,6 +33,9 @@
 #import "LCDebuggerView.h"
 #import "LCCrashReport.h"
 
+// If you want to add a new command, use it.
+// #import "LCCMD.h"
+
 @interface LCDebugger : NSObject
 
 /**
@@ -42,8 +45,15 @@
 @property(nonatomic,strong) LCDebuggerView * debuggerView;
 
 /**
-    @class
-    @brief When call sharedInstance method, will automatically generate a debugger view on keyWindow. Debugger view integrates all functions.
+ @class
+ @brief If you want to close log printf.
+ */
+@property(nonatomic,assign) BOOL logEnable;
+
+
+/**
+ @class
+ @brief When call sharedInstance method, will automatically generate a debugger view on keyWindow. Debugger view integrates all functions.
  */
 + (instancetype)sharedInstance;
 

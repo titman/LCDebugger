@@ -31,8 +31,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LCCMD.h"
 
-@interface LCLogView : UIView
+@interface LCLogView : UIView <LC_CMD_IMP>
 
 -(void) appendLogString:(NSString *)logString;
 

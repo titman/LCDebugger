@@ -51,10 +51,23 @@
 {
     if (self = [super initWithFrame:frame]) {
         
+        [LCCMD addObjectCMD:@"cleanlog" CMDType:LC_CMD_TYPE_ACTION IMPObject:self CMDDescription:@"Clean all logs."];
+        
         [self buildUI];
     }
     
     return self;
+}
+
+-(NSString *) CMDAction:(NSString *)cmd
+{
+    [LCGCD dispatchAsyncInMainQueue:^{
+        
+        self.logView.text = [NSString stringWithFormat:@"[Debugger Log]\n\n You can input 'see help' to see the all cmd.\n\n"];
+
+    }];
+    
+    return nil;
 }
 
 -(BOOL) resignFirstResponder

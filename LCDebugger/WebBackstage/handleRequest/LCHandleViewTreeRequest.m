@@ -30,18 +30,58 @@
 //  IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "LCTools.h"
+#import "LCHandleViewTreeRequest.h"
+#import "UIView+Observer.h"
+#import "NSObject+ViewTree.h"
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
 
-@interface LCActionSheet : UIView
+@interface LCHandleViewTreeRequest ()
 
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
+@property(nonatomic,assign) BOOL firstLoad;
+@property(nonatomic,assign) double lastUpdate;
 
--(void) addTitle:(NSString *)title;
+@end
 
--(void) show;
+@implementation LCHandleViewTreeRequest
+
+-(instancetype) init
+{
+    if (self = [super init]) {
+        
+        
+    }
+    
+    return self;
+}
+
+-(NSDictionary *) handleRequestPath:(NSString *)path
+{
+    NSString * param = [path componentsSeparatedByString:@"?"].lastObject;
+    
+    NSTimeInterval timeStamp = [[[param componentsSeparatedByString:@"="] lastObject] doubleValue];
+    
+    if ([UIView needsRefresh] == NO && self.lastUpdate <= timeStamp)
+    {
+        return @{
+                   @"code":@(304)
+                };
+        
+    }else{
+
+        [UIView setNeedsRefresh:NO];
+        
+        timeStamp = [[NSDate date] timeIntervalSince1970];
+        
+        self.lastUpdate = timeStamp;
+        
+        return @{
+                    @"code":        @(200),
+                    @"lastUpdate":  [NSString stringWithFormat:@"%@",@(timeStamp)],
+                    @"content":     [[UIApplication sharedApplication] toDict]
+                 };
+    }
+
+    return nil;
+}
 
 @end

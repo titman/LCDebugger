@@ -30,18 +30,15 @@
 //  IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+#import "LCLog.h"
 #import "LCTools.h"
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+#import "UIView+LCExtension.h"
+#import "UIView+LCGesture.h"
+#import "UIView+LCUIViewFrame.h"
 
-@interface LCActionSheet : UIView
-
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
-
--(void) addTitle:(NSString *)title;
-
--(void) show;
-
-@end
+#import "NSObject+LCFastSingleton.h"

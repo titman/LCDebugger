@@ -84,15 +84,19 @@ static NSMutableDictionary * __commandCache = nil;
     
     NSString * errorString = [NSString stringWithFormat:@"Invalid command : %@. ( You can input 'see help' to see all command. Or add the command use 'LCCMD.h')",command];
     
-    NSArray * commandArray = [command componentsSeparatedByString:@" "];
+    NSMutableArray * commandArray = [[command componentsSeparatedByString:@" "] mutableCopy];
 
-    if (!commandArray || commandArray.count <= 1 || ![command isKindOfClass:[NSString class]]) {
+    if (commandArray.count == 1) {
+     
+        [commandArray insertObject:@"sim" atIndex:0];
+    }
+    else if (!commandArray || commandArray.count <= 1 || ![command isKindOfClass:[NSString class]]) {
 
         CMDLog(errorString);
         return NO;
     }
     
-    NSString * type = commandArray[0];
+    //NSString * type = commandArray[0];
     NSString * cmd = commandArray[1];
     
     LCCMDCache * cache = self.commandCache[cmd];
@@ -102,35 +106,19 @@ static NSMutableDictionary * __commandCache = nil;
         return NO;
     }
     
-    if ([type isEqualToString:@"see"]) {
-        
-        if (cache.cmdType == LC_CMD_TYPE_SEE) {
+    if (cache.cmdType == LC_CMD_TYPE_SEE) {
             
-            [self execute:cache];
-            return YES;
-        }
-        else{
-            
-            CMDLog(errorString);
-            return NO;
-        }
-        
+        [self execute:cache];
+        return YES;
     }
-    else if([type isEqualToString:@"action"]){
-        
-        if (cache.cmdType == LC_CMD_TYPE_ACTION) {
+    else if (cache.cmdType == LC_CMD_TYPE_ACTION) {
             
-            [self execute:cache];
-            return YES;
-        }
-        else{
-            
-            CMDLog(errorString);
-            return NO;
-        }
+        [self execute:cache];
+        return YES;
     }
     
-    return YES;
+    CMDLog(errorString);
+    return NO;
 }
 
 +(void) execute:(LCCMDCache *)cache
@@ -145,7 +133,11 @@ static NSMutableDictionary * __commandCache = nil;
         }
         else if (cache.cmdType == LC_CMD_TYPE_ACTION){
             
-            [cache.class CMDAction:cache.cmd];
+             NSString * info = [cache.class CMDAction:cache.cmd];
+            
+            if (info) {
+                CMDLog(info);
+            }
         }
         
         return;
@@ -162,7 +154,11 @@ static NSMutableDictionary * __commandCache = nil;
         }
         else if (cache.cmdType == LC_CMD_TYPE_ACTION){
             
-            [cache.object CMDAction:cache.cmd];
+            NSString * info = [cache.object CMDAction:cache.cmd];
+            
+            if (info) {
+                CMDLog(info);
+            }
         }
         return;
     }
@@ -221,12 +217,14 @@ static NSMutableDictionary * __commandCache = nil;
 
 
 // Default cmd
-+(void) CMDAction:(NSString *)cmd
++(NSString *) CMDAction:(NSString *)cmd
 {
     if ([cmd isEqualToString:@"exit"]) {
         
         exit(0);
     }
+    
+    return nil;
 }
 
 +(NSString *) CMDSee:(NSString *)cmd

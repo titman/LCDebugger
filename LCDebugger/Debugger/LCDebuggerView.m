@@ -31,20 +31,14 @@
 //
 
 #import "LCDebuggerImport.h"
+#import "LCSystemInfoImport.h"
 #import "LCDebuggerView.h"
 #import "LCViewInspector.h"
 #import "LCSystemInfo.h"
 #import "LCNetworkTraffic.h"
 #import "UIWindow+LCUIWindowHook.h"
-#import "LCCPUTableView.h"
 #import "LCLogView.h"
 #import "LCActionSheet.h"
-#import "LCDeviceTableView.h"
-#import "LCProgressTableView.h"
-#import "LCRAMTableView.h"
-#import "LCNetworkTableView.h"
-#import "LCStorageTableView.h"
-#import "LCWebBackstageTableView.h"
 
 typedef void (^__LCDebuggerLogButtonDidTap) ( NSInteger index );
 
@@ -212,6 +206,8 @@ LC_PROPERTY(copy) __LCDebuggerLogButtonDidTap didTapButton;
 
 @property (nonatomic,strong) __LCDebuggerLog * mainView;
 
+@property (nonatomic,strong) NSArray * tableClasses;
+
 @end
 
 @implementation LCDebuggerView
@@ -231,6 +227,16 @@ LC_PROPERTY(copy) __LCDebuggerLogButtonDidTap didTapButton;
 
 -(void) buildUI
 {
+    self.tableClasses = @[
+                          NSObject.new,
+                          [LCCPUTableView class],
+                          [LCDeviceTableView class],
+                          [LCProgressTableView class],
+                          [LCRAMTableView class],
+                          [LCNetworkTableView class],
+                          [LCStorageTableView class],
+                          ];
+    
     [self defaultSetting];
     
     [self performSelector:@selector(addToKeyWindow) withObject:nil afterDelay:0];
@@ -238,7 +244,9 @@ LC_PROPERTY(copy) __LCDebuggerLogButtonDidTap didTapButton;
 
 - (void)defaultSetting
 {
-    self.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
+    self.color = [[UIColor blueColor] colorWithAlphaComponent:0.5];
+    
+    self.backgroundColor = self.color;
     self.layer.cornerRadius = 16;
     self.layer.shadowColor = [UIColor grayColor].CGColor;
     self.layer.shadowOffset = CGSizeMake(0, 0);
@@ -288,48 +296,23 @@ LC_PROPERTY(copy) __LCDebuggerLogButtonDidTap didTapButton;
             [sheet addTitle:@"Memory"];
             [sheet addTitle:@"Network"];
             [sheet addTitle:@"Disk"];
+            
 
+            @weakly(sheet);
+            
             sheet.dismissedBlock = ^(NSInteger index){
               
+                @normally(sheet);
+                
                 if (index == 0) {
                     
                     [self.mainView back];
                 }
-                else if (index == 1){
+                else{
                     
-                    LCCPUTableView * tableView = [[LCCPUTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
+                    UITableView * tableView = [[self.tableClasses[index] alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
                     
-                    [self.mainView changedCurrentView:tableView title:@"CPU"];
-                }
-                else if (index == 2){
-                    
-                    LCDeviceTableView * tableView = [[LCDeviceTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
-                    
-                    [self.mainView changedCurrentView:tableView title:@"Device"];
-                }
-                else if (index == 3){
-                    
-                    LCProgressTableView * tableView = [[LCProgressTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
-                    
-                    [self.mainView changedCurrentView:tableView title:@"Processes"];
-                }
-                else if (index == 4){
-                    
-                    LCRAMTableView * tableView = [[LCRAMTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
-                    
-                    [self.mainView changedCurrentView:tableView title:@"Memory"];
-                }
-                else if (index == 5){
-                    
-                    LCNetworkTableView * tableView = [[LCNetworkTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
-                    
-                    [self.mainView changedCurrentView:tableView title:@"Network"];
-                }
-                else if (index == 6){
-                    
-                    LCStorageTableView * tableView = [[LCStorageTableView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
-                    
-                    [self.mainView changedCurrentView:tableView title:@"Disk"];
+                    [self.mainView changedCurrentView:tableView title:sheet.titles[index]];
                 }
             };
             
@@ -375,6 +358,13 @@ LC_PROPERTY(copy) __LCDebuggerLogButtonDidTap didTapButton;
     
     [self update];
     [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(update) userInfo:nil repeats:YES];
+}
+
+-(void) setColor:(UIColor *)color
+{
+    _color = color;
+    
+    self.backgroundColor = _color;
 }
 
 - (void)addToKeyWindow

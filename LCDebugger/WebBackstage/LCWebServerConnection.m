@@ -35,8 +35,7 @@
 #import "HTTPDynamicFileResponse.h"
 #import "HTTPDataResponse.h"
 #import "LCCMD.h"
-#import "LCHandleViewTreeRequest.h"
-#import "LCHandleViewHighlightRequest.h"
+#import "LCHandleRequest.h"
 
 @implementation LCWebServerConnection
 
@@ -51,6 +50,7 @@
         return nil;
     }
     
+    
     if ([path rangeOfString:@"/?cmd="].length)
     {
         NSArray * parmater = [path componentsSeparatedByString:@"/?cmd="];
@@ -63,26 +63,34 @@
     }
     else if ([path rangeOfString:@"loadViewTree"].length)
     {
-        NSDictionary * dic = [LCHandleViewTreeRequest.LCS handleRequestPath:path];
-        
-        NSData * data = [NSJSONSerialization dataWithJSONObject:@{@"state":@"success",@"data":dic} options:0 error:nil];
-        
-        return [[HTTPDataResponse alloc] initWithData:data];
+        return [[HTTPDataResponse alloc] initWithData:[NSJSONSerialization dataWithJSONObject:@{@"state":@"success",@"data":[LCHandleViewTreeRequest.LCS handleRequestPath:path]} options:0 error:nil]];
 
     }
     else if ([path rangeOfString:@"highlightView"].length)
     {
-        NSDictionary * dic = [LCHandleViewHighlightRequest.LCS handleRequestPath:path];
-        
-        NSData * data = [NSJSONSerialization dataWithJSONObject:@{@"state":@"success",@"data":dic} options:0 error:nil];
-        
-        return [[HTTPDataResponse alloc] initWithData:data];
+        return [[HTTPDataResponse alloc] initWithData:[NSJSONSerialization dataWithJSONObject:@{@"state":@"success",@"data":[LCHandleViewHighlightRequest.LCS handleRequestPath:path]} options:0 error:nil]];
     }
-    else if ([path rangeOfString:@"move"].length)
+    else if ([path rangeOfString:@"moveview"].length)
     {
-        
+        return [[HTTPDataResponse alloc] initWithData:[NSJSONSerialization dataWithJSONObject:@{@"state":@"success",@"data":[LCHandleMoveViewRequest.LCS handleRequestPath:path]} options:0 error:nil]];
     }
-    
+    else if ([path rangeOfString:@"deviceinfo"].length)
+    {
+        return [[HTTPDataResponse alloc] initWithData:[NSJSONSerialization dataWithJSONObject:[LCHandleDeviceInfoRequest.LCS handleRequestPath:path] options:0 error:nil]];
+    }
+    else if ([path rangeOfString:@"crashreport"].length)
+    {
+        [LCCMD analysisCommand:@"see crashreport"];
+        
+        return nil;
+    }
+    else if ([path rangeOfString:@"cmdhelp"].length)
+    {
+        [LCCMD analysisCommand:@"see help"];
+        
+        return nil;
+    }
+
     return [super httpResponseForMethod:method URI:path];
 }
 

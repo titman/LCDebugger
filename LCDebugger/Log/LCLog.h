@@ -69,6 +69,7 @@ if (!(_cond))                                                                   
 }
 #endif
 
+static BOOL LCLogEnable = YES;
 
 #if __cplusplus
 extern "C" {

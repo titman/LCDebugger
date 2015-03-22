@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1362E4241ABEFAAB00453886 /* LCHandleDeviceInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E41D1ABEFAAB00453886 /* LCHandleDeviceInfoRequest.m */; };
+		1362E4251ABEFAAB00453886 /* LCHandleMoveViewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E41F1ABEFAAB00453886 /* LCHandleMoveViewRequest.m */; };
+		1362E4261ABEFAAB00453886 /* LCHandleViewHighlightRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E4211ABEFAAB00453886 /* LCHandleViewHighlightRequest.m */; };
+		1362E4271ABEFAAB00453886 /* LCHandleViewTreeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E4231ABEFAAB00453886 /* LCHandleViewTreeRequest.m */; };
+		1362E4311ABEFBDB00453886 /* MethodSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E42A1ABEFBDB00453886 /* MethodSwizzle.m */; };
+		1362E4321ABEFBDB00453886 /* NSObject+ViewTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E42C1ABEFBDB00453886 /* NSObject+ViewTree.m */; };
+		1362E4331ABEFBDB00453886 /* UIDevice+Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E42E1ABEFBDB00453886 /* UIDevice+Reachability.m */; };
+		1362E4341ABEFBDB00453886 /* UIView+Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E4301ABEFBDB00453886 /* UIView+Observer.m */; };
 		137F716B1AB3326E008207D3 /* LCRAMInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71661AB3326E008207D3 /* LCRAMInfo.m */; };
 		137F716C1AB3326E008207D3 /* LCRAMInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F71681AB3326E008207D3 /* LCRAMInfoController.m */; };
 		137F716D1AB3326E008207D3 /* LCRAMUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F716A1AB3326E008207D3 /* LCRAMUsage.m */; };
@@ -62,11 +70,6 @@
 		BF63CFE31AB15DC5000343FF /* LCDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFE01AB15DC5000343FF /* LCDeviceInfo.m */; };
 		BF63CFE41AB15DC5000343FF /* LCDeviceInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63CFE21AB15DC5000343FF /* LCDeviceInfoController.m */; };
 		BF6925E91ABBED6500B29CF3 /* tree in Resources */ = {isa = PBXBuildFile; fileRef = BF6925E81ABBED6500B29CF3 /* tree */; };
-		BF6925EC1ABBF44500B29CF3 /* LCHandleViewTreeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6925EB1ABBF44500B29CF3 /* LCHandleViewTreeRequest.m */; };
-		BF6925EF1ABC049E00B29CF3 /* UIView+Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6925EE1ABC049E00B29CF3 /* UIView+Observer.m */; };
-		BF6925F21ABC04B400B29CF3 /* MethodSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6925F11ABC04B400B29CF3 /* MethodSwizzle.m */; };
-		BF6925F51ABC04CD00B29CF3 /* NSObject+ViewTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6925F41ABC04CD00B29CF3 /* NSObject+ViewTree.m */; };
-		BF6925F81ABC0AB800B29CF3 /* LCHandleViewHighlightRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6925F71ABC0AB800B29CF3 /* LCHandleViewHighlightRequest.m */; };
 		BF69262F1ABC145E00B29CF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF69262E1ABC145E00B29CF3 /* Main.storyboard */; };
 		BF6926341ABC146600B29CF3 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6926311ABC146600B29CF3 /* MasterViewController.m */; };
 		BF6926351ABC146600B29CF3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6926331ABC146600B29CF3 /* DetailViewController.m */; };
@@ -76,7 +79,6 @@
 		BF7E3FDB1AB6B29900D03699 /* LCStorageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3FDA1AB6B29900D03699 /* LCStorageTableView.m */; };
 		BF7E3FDF1AB6B78B00D03699 /* LCCrashReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3FDE1AB6B78B00D03699 /* LCCrashReport.m */; };
 		BF7E3FE31AB6D1C400D03699 /* LCWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3FE21AB6D1C400D03699 /* LCWebServer.m */; };
-		BF7E3FE61AB6D46600D03699 /* UIDevice+Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3FE51AB6D46600D03699 /* UIDevice+Reachability.m */; };
 		BFA64A8D1AB2A926004139B6 /* UIView+LCUIViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A8C1AB2A926004139B6 /* UIView+LCUIViewFrame.m */; };
 		BFA64A901AB2A967004139B6 /* UIView+LCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A8F1AB2A967004139B6 /* UIView+LCExtension.m */; };
 		BFA64A931AB2A979004139B6 /* UIView+LCGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA64A921AB2A979004139B6 /* UIView+LCGesture.m */; };
@@ -111,6 +113,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1362E41C1ABEFAAB00453886 /* LCHandleDeviceInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHandleDeviceInfoRequest.h; sourceTree = "<group>"; };
+		1362E41D1ABEFAAB00453886 /* LCHandleDeviceInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHandleDeviceInfoRequest.m; sourceTree = "<group>"; };
+		1362E41E1ABEFAAB00453886 /* LCHandleMoveViewRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHandleMoveViewRequest.h; sourceTree = "<group>"; };
+		1362E41F1ABEFAAB00453886 /* LCHandleMoveViewRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHandleMoveViewRequest.m; sourceTree = "<group>"; };
+		1362E4201ABEFAAB00453886 /* LCHandleViewHighlightRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHandleViewHighlightRequest.h; sourceTree = "<group>"; };
+		1362E4211ABEFAAB00453886 /* LCHandleViewHighlightRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHandleViewHighlightRequest.m; sourceTree = "<group>"; };
+		1362E4221ABEFAAB00453886 /* LCHandleViewTreeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHandleViewTreeRequest.h; sourceTree = "<group>"; };
+		1362E4231ABEFAAB00453886 /* LCHandleViewTreeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHandleViewTreeRequest.m; sourceTree = "<group>"; };
+		1362E4281ABEFAC600453886 /* LCHandleRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCHandleRequest.h; sourceTree = "<group>"; };
+		1362E4291ABEFBDB00453886 /* MethodSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodSwizzle.h; sourceTree = "<group>"; };
+		1362E42A1ABEFBDB00453886 /* MethodSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzle.m; sourceTree = "<group>"; };
+		1362E42B1ABEFBDB00453886 /* NSObject+ViewTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewTree.h"; sourceTree = "<group>"; };
+		1362E42C1ABEFBDB00453886 /* NSObject+ViewTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ViewTree.m"; sourceTree = "<group>"; };
+		1362E42D1ABEFBDB00453886 /* UIDevice+Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Reachability.h"; sourceTree = "<group>"; };
+		1362E42E1ABEFBDB00453886 /* UIDevice+Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Reachability.m"; sourceTree = "<group>"; };
+		1362E42F1ABEFBDB00453886 /* UIView+Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Observer.h"; sourceTree = "<group>"; };
+		1362E4301ABEFBDB00453886 /* UIView+Observer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Observer.m"; sourceTree = "<group>"; };
+		1362E4351ABEFCA200453886 /* LCSystemInfoImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSystemInfoImport.h; sourceTree = "<group>"; };
+		1362E4361ABEFD5F00453886 /* LCDebuggerImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDebuggerImport.h; sourceTree = "<group>"; };
 		137F71651AB3326E008207D3 /* LCRAMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfo.h; sourceTree = "<group>"; };
 		137F71661AB3326E008207D3 /* LCRAMInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRAMInfo.m; sourceTree = "<group>"; };
 		137F71671AB3326E008207D3 /* LCRAMInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRAMInfoController.h; sourceTree = "<group>"; };
@@ -219,16 +240,6 @@
 		BF63CFE11AB15DC5000343FF /* LCDeviceInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDeviceInfoController.h; sourceTree = "<group>"; };
 		BF63CFE21AB15DC5000343FF /* LCDeviceInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDeviceInfoController.m; sourceTree = "<group>"; };
 		BF6925E81ABBED6500B29CF3 /* tree */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tree; sourceTree = "<group>"; };
-		BF6925EA1ABBF44500B29CF3 /* LCHandleViewTreeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHandleViewTreeRequest.h; sourceTree = "<group>"; };
-		BF6925EB1ABBF44500B29CF3 /* LCHandleViewTreeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHandleViewTreeRequest.m; sourceTree = "<group>"; };
-		BF6925ED1ABC049E00B29CF3 /* UIView+Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Observer.h"; sourceTree = "<group>"; };
-		BF6925EE1ABC049E00B29CF3 /* UIView+Observer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Observer.m"; sourceTree = "<group>"; };
-		BF6925F01ABC04B400B29CF3 /* MethodSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodSwizzle.h; sourceTree = "<group>"; };
-		BF6925F11ABC04B400B29CF3 /* MethodSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzle.m; sourceTree = "<group>"; };
-		BF6925F31ABC04CD00B29CF3 /* NSObject+ViewTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewTree.h"; sourceTree = "<group>"; };
-		BF6925F41ABC04CD00B29CF3 /* NSObject+ViewTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ViewTree.m"; sourceTree = "<group>"; };
-		BF6925F61ABC0AB800B29CF3 /* LCHandleViewHighlightRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHandleViewHighlightRequest.h; sourceTree = "<group>"; };
-		BF6925F71ABC0AB800B29CF3 /* LCHandleViewHighlightRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHandleViewHighlightRequest.m; sourceTree = "<group>"; };
 		BF69262E1ABC145E00B29CF3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF6926301ABC146600B29CF3 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BF6926311ABC146600B29CF3 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
@@ -246,8 +257,6 @@
 		BF7E3FDE1AB6B78B00D03699 /* LCCrashReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCrashReport.m; sourceTree = "<group>"; };
 		BF7E3FE11AB6D1C400D03699 /* LCWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebServer.h; sourceTree = "<group>"; };
 		BF7E3FE21AB6D1C400D03699 /* LCWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebServer.m; sourceTree = "<group>"; };
-		BF7E3FE41AB6D46600D03699 /* UIDevice+Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Reachability.h"; sourceTree = "<group>"; };
-		BF7E3FE51AB6D46600D03699 /* UIDevice+Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Reachability.m"; sourceTree = "<group>"; };
 		BFA64A8B1AB2A926004139B6 /* UIView+LCUIViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LCUIViewFrame.h"; sourceTree = "<group>"; };
 		BFA64A8C1AB2A926004139B6 /* UIView+LCUIViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCUIViewFrame.m"; sourceTree = "<group>"; };
 		BFA64A8E1AB2A967004139B6 /* UIView+LCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LCExtension.h"; sourceTree = "<group>"; };
@@ -256,7 +265,6 @@
 		BFA64A921AB2A979004139B6 /* UIView+LCGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCGesture.m"; sourceTree = "<group>"; };
 		BFA64A941AB2A9CB004139B6 /* NSObject+LCFastSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LCFastSingleton.h"; sourceTree = "<group>"; };
 		BFA64A951AB2A9CB004139B6 /* NSObject+LCFastSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LCFastSingleton.m"; sourceTree = "<group>"; };
-		BFA64A971AB2AC4A004139B6 /* LCDebuggerImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDebuggerImport.h; sourceTree = "<group>"; };
 		BFA64A9A1AB2AE12004139B6 /* LCTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTools.h; sourceTree = "<group>"; };
 		BFA64A9B1AB2B4F2004139B6 /* LCLogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLogView.h; sourceTree = "<group>"; };
 		BFA64A9C1AB2B4F2004139B6 /* LCLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLogView.m; sourceTree = "<group>"; };
@@ -311,6 +319,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1362E41B1ABEFAAB00453886 /* handleRequest */ = {
+			isa = PBXGroup;
+			children = (
+				1362E4281ABEFAC600453886 /* LCHandleRequest.h */,
+				1362E41C1ABEFAAB00453886 /* LCHandleDeviceInfoRequest.h */,
+				1362E41D1ABEFAAB00453886 /* LCHandleDeviceInfoRequest.m */,
+				1362E41E1ABEFAAB00453886 /* LCHandleMoveViewRequest.h */,
+				1362E41F1ABEFAAB00453886 /* LCHandleMoveViewRequest.m */,
+				1362E4201ABEFAAB00453886 /* LCHandleViewHighlightRequest.h */,
+				1362E4211ABEFAAB00453886 /* LCHandleViewHighlightRequest.m */,
+				1362E4221ABEFAAB00453886 /* LCHandleViewTreeRequest.h */,
+				1362E4231ABEFAAB00453886 /* LCHandleViewTreeRequest.m */,
+			);
+			path = handleRequest;
+			sourceTree = "<group>";
+		};
 		137F71641AB33261008207D3 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +405,14 @@
 				BFA64A8C1AB2A926004139B6 /* UIView+LCUIViewFrame.m */,
 				BF63CF8A1AB14256000343FF /* UIWindow+LCUIWindowHook.h */,
 				BF63CF8B1AB14256000343FF /* UIWindow+LCUIWindowHook.m */,
+				1362E4291ABEFBDB00453886 /* MethodSwizzle.h */,
+				1362E42A1ABEFBDB00453886 /* MethodSwizzle.m */,
+				1362E42B1ABEFBDB00453886 /* NSObject+ViewTree.h */,
+				1362E42C1ABEFBDB00453886 /* NSObject+ViewTree.m */,
+				1362E42D1ABEFBDB00453886 /* UIDevice+Reachability.h */,
+				1362E42E1ABEFBDB00453886 /* UIDevice+Reachability.m */,
+				1362E42F1ABEFBDB00453886 /* UIView+Observer.h */,
+				1362E4301ABEFBDB00453886 /* UIView+Observer.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -429,6 +461,7 @@
 				BF63CFB71AB1457F000343FF /* LCDevice.m */,
 				BF63CFB01AB143F1000343FF /* LCHardcodedDeviceData.h */,
 				BF63CFB11AB143F1000343FF /* LCHardcodedDeviceData.m */,
+				1362E4351ABEFCA200453886 /* LCSystemInfoImport.h */,
 			);
 			path = SystemInfo;
 			sourceTree = "<group>";
@@ -553,24 +586,13 @@
 			children = (
 				13D08DD61AB80FDE005B04C8 /* web */,
 				BF7E3FEF1AB6E34E00D03699 /* http */,
+				1362E41B1ABEFAAB00453886 /* handleRequest */,
 				BF7E3FE11AB6D1C400D03699 /* LCWebServer.h */,
 				BF7E3FE21AB6D1C400D03699 /* LCWebServer.m */,
 				13D08DD91AB82751005B04C8 /* LCWebServerConnection.h */,
 				13D08DDA1AB82751005B04C8 /* LCWebServerConnection.m */,
-				BF6925EA1ABBF44500B29CF3 /* LCHandleViewTreeRequest.h */,
-				BF6925EB1ABBF44500B29CF3 /* LCHandleViewTreeRequest.m */,
-				BF6925F61ABC0AB800B29CF3 /* LCHandleViewHighlightRequest.h */,
-				BF6925F71ABC0AB800B29CF3 /* LCHandleViewHighlightRequest.m */,
-				BF6925ED1ABC049E00B29CF3 /* UIView+Observer.h */,
-				BF6925EE1ABC049E00B29CF3 /* UIView+Observer.m */,
-				BF6925F31ABC04CD00B29CF3 /* NSObject+ViewTree.h */,
-				BF6925F41ABC04CD00B29CF3 /* NSObject+ViewTree.m */,
-				BF6925F01ABC04B400B29CF3 /* MethodSwizzle.h */,
-				BF6925F11ABC04B400B29CF3 /* MethodSwizzle.m */,
 				BF629DD21ABA82B700E6ED82 /* LCWebBackstageTableView.h */,
 				BF629DD31ABA82B700E6ED82 /* LCWebBackstageTableView.m */,
-				BF7E3FE41AB6D46600D03699 /* UIDevice+Reachability.h */,
-				BF7E3FE51AB6D46600D03699 /* UIDevice+Reachability.m */,
 			);
 			path = WebBackstage;
 			sourceTree = "<group>";
@@ -614,6 +636,7 @@
 		BFA64A8A1AB2A882004139B6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1362E4361ABEFD5F00453886 /* LCDebuggerImport.h */,
 				BFA64A9A1AB2AE12004139B6 /* LCTools.h */,
 				BFA64AA21AB2C278004139B6 /* LCGCD.h */,
 				BFA64AA31AB2C278004139B6 /* LCGCD.m */,
@@ -724,7 +747,6 @@
 				BFBFBD581AB027B700854A11 /* LCDebugger.h */,
 				BFBFBD591AB027B700854A11 /* LCDebugger.m */,
 				BFA64AA01AB2BB40004139B6 /* LOGO.txt */,
-				BFA64A971AB2AC4A004139B6 /* LCDebuggerImport.h */,
 			);
 			name = LCDebugger;
 			path = ../../LCDebugger;
@@ -835,8 +857,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1362E4251ABEFAAB00453886 /* LCHandleMoveViewRequest.m in Sources */,
+				1362E4311ABEFBDB00453886 /* MethodSwizzle.m in Sources */,
 				BF63CFE31AB15DC5000343FF /* LCDeviceInfo.m in Sources */,
-				BF7E3FE61AB6D46600D03699 /* UIDevice+Reachability.m in Sources */,
 				13BB1AB71AB53C9C007FC7EB /* LCGPUInfoController.m in Sources */,
 				BF63CFA21AB14256000343FF /* LCViewInspector.m in Sources */,
 				BF7E3FDF1AB6B78B00D03699 /* LCCrashReport.m in Sources */,
@@ -853,20 +876,21 @@
 				BF63CFB51AB144A9000343FF /* LCUtils.m in Sources */,
 				BFA64AB71AB2D3A3004139B6 /* LCUIKeyBoard.m in Sources */,
 				BF63CFAD1AB142DA000343FF /* LCCPUInfoController.m in Sources */,
+				1362E4241ABEFAAB00453886 /* LCHandleDeviceInfoRequest.m in Sources */,
 				BF63CFB81AB1457F000343FF /* LCDevice.m in Sources */,
 				BFA64A901AB2A967004139B6 /* UIView+LCExtension.m in Sources */,
 				BFA64A931AB2A979004139B6 /* UIView+LCGesture.m in Sources */,
+				1362E4271ABEFAAB00453886 /* LCHandleViewTreeRequest.m in Sources */,
+				1362E4331ABEFBDB00453886 /* UIDevice+Reachability.m in Sources */,
 				137F717E1AB343E1008207D3 /* LCNetworkInfoController.m in Sources */,
 				BF7E3FCA1AB6AC9B00D03699 /* LCConnectionsTableView.m in Sources */,
 				137F717D1AB343E1008207D3 /* LCNetworkInfo.m in Sources */,
 				13D08DC41AB80AB3005B04C8 /* DDRange.m in Sources */,
 				137F716B1AB3326E008207D3 /* LCRAMInfo.m in Sources */,
-				BF6925EF1ABC049E00B29CF3 /* UIView+Observer.m in Sources */,
 				13D08DB51AB80A3C005B04C8 /* HTTPServer.m in Sources */,
 				BF7E3FE31AB6D1C400D03699 /* LCWebServer.m in Sources */,
 				BFA64AD11AB30B9A004139B6 /* LCProgressTableView.m in Sources */,
 				13D08DC21AB80AB3005B04C8 /* DDData.m in Sources */,
-				BF6925EC1ABBF44500B29CF3 /* LCHandleViewTreeRequest.m in Sources */,
 				BFA64AB01AB2C5FF004139B6 /* LCCMD.m in Sources */,
 				13D08DB81AB80A3C005B04C8 /* WebSocket.m in Sources */,
 				137F716C1AB3326E008207D3 /* LCRAMInfoController.m in Sources */,
@@ -876,15 +900,16 @@
 				137F71811AB34787008207D3 /* LCNetworkTableView.m in Sources */,
 				137F71701AB3342A008207D3 /* LCRAMTableView.m in Sources */,
 				BFA64ABA1AB2E6A2004139B6 /* LCActionSheet.m in Sources */,
+				1362E4261ABEFAAB00453886 /* LCHandleViewHighlightRequest.m in Sources */,
 				BF63CFA01AB14256000343FF /* LCNetworkTraffic.m in Sources */,
 				BFA64ABD1AB2F128004139B6 /* LCDeviceTableView.m in Sources */,
 				BF63CFAE1AB142DA000343FF /* LCCPULoad.m in Sources */,
 				BF63CFBB1AB14A4B000343FF /* LCCPUTableView.m in Sources */,
 				BFBFBD5A1AB027B700854A11 /* LCDebugger.m in Sources */,
+				1362E4321ABEFBDB00453886 /* NSObject+ViewTree.m in Sources */,
 				BFBFBD191AAF0BB400854A11 /* AppDelegate.m in Sources */,
 				13BB1ABA1AB53D13007FC7EB /* LCGPUTableView.m in Sources */,
 				BF63CFD01AB14B0D000343FF /* LCGLDataLine.m in Sources */,
-				BF6925F81ABC0AB800B29CF3 /* LCHandleViewHighlightRequest.m in Sources */,
 				BF6926341ABC146600B29CF3 /* MasterViewController.m in Sources */,
 				13D08DBB1AB80A51005B04C8 /* GCDAsyncSocket.m in Sources */,
 				13D08DCF1AB80ABA005B04C8 /* HTTPAsyncFileResponse.m in Sources */,
@@ -897,14 +922,12 @@
 				13D08DB71AB80A3C005B04C8 /* HTTPMessage.m in Sources */,
 				BF63CFD51AB14B0D000343FF /* LCGLTube.m in Sources */,
 				BF63CFB21AB143F1000343FF /* LCHardcodedDeviceData.m in Sources */,
-				BF6925F51ABC04CD00B29CF3 /* NSObject+ViewTree.m in Sources */,
 				BFA64ACF1AB30B9A004139B6 /* LCProcessInfo.m in Sources */,
 				BFA64A961AB2A9CB004139B6 /* NSObject+LCFastSingleton.m in Sources */,
 				BF63CFD31AB14B0D000343FF /* LCGLBubbleEffect.m in Sources */,
 				BF63CF9D1AB14256000343FF /* LCDebuggerView.m in Sources */,
 				BF63CFAC1AB142DA000343FF /* LCCPUInfo.m in Sources */,
 				13D08DD01AB80ABA005B04C8 /* HTTPDataResponse.m in Sources */,
-				BF6925F21ABC04B400B29CF3 /* MethodSwizzle.m in Sources */,
 				BF7E3FDB1AB6B29900D03699 /* LCStorageTableView.m in Sources */,
 				13D08DB41AB80A3C005B04C8 /* HTTPAuthenticationRequest.m in Sources */,
 				BF63CFD11AB14B0D000343FF /* LCGLLineGraph.m in Sources */,
@@ -914,6 +937,7 @@
 				BF63CFCF1AB14B0D000343FF /* LCGLEffect.m in Sources */,
 				BFBFBD161AAF0BB400854A11 /* main.m in Sources */,
 				BF63CFE41AB15DC5000343FF /* LCDeviceInfoController.m in Sources */,
+				1362E4341ABEFBDB00453886 /* UIView+Observer.m in Sources */,
 				BF63CF9E1AB14256000343FF /* LCLog.mm in Sources */,
 				BF63CFDD1AB14F82000343FF /* LCDeviceSpecificUI.m in Sources */,
 				BF7E3FD71AB6B22F00D03699 /* LCStorageInfo.m in Sources */,

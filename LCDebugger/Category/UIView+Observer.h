@@ -31,17 +31,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LCTools.h"
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+@interface UIView (Observer)
 
-@interface LCActionSheet : UIView
++ (BOOL)needsRefresh;
 
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
++ (void)setNeedsRefresh:(BOOL)_needsrefresh;
 
--(void) addTitle:(NSString *)title;
++ (void)startObserving;
 
--(void) show;
++ (void)stopObserving;
 
 @end

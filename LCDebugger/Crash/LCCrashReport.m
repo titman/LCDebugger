@@ -43,7 +43,7 @@
 +(void) load
 {
     // Default cmd.
-    [LCCMD addClassCMD:@"crashlog" CMDType:LC_CMD_TYPE_SEE IMPClass:[LCCrashReport class] CMDDescription:@"To see the all of crash logs."];
+    [LCCMD addClassCMD:@"crashreport" CMDType:LC_CMD_TYPE_SEE IMPClass:[LCCrashReport class] CMDDescription:@"To see the all of crash logs."];
     [LCCMD addClassCMD:@"lastcrash" CMDType:LC_CMD_TYPE_SEE IMPClass:[LCCrashReport class] CMDDescription:@"To see the nearest of crash logs."];
     
     NSSetUncaughtExceptionHandler(&LCCrashReportHandler);
@@ -97,7 +97,7 @@
         return @"Don't have any crash.";
     }
     
-    if ([cmd isEqualToString:@"crashlog"]) {
+    if ([cmd isEqualToString:@"crashreport"]) {
         
         NSMutableString * info = [NSMutableString stringWithFormat:@"\n  * Count : %@\n", @(crashLogs.count)];
         
@@ -116,9 +116,9 @@
     return @"";
 }
 
-+(void) CMDAction:(NSString *)cmd
++(NSString *) CMDAction:(NSString *)cmd
 {
-    
+    return nil;
 }
 
 @end

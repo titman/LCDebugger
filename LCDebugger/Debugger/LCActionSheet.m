@@ -74,6 +74,12 @@ LC_PROPERTY(strong) NSMutableArray * items;
 
 -(void) addTitle:(NSString *)title
 {
+    if (!self.titles) {
+        self.titles = [NSMutableArray array];
+    }
+    
+    [self.titles addObject:title];
+    
     UIButton * button = UIButton.view;
     button.viewFrameWidth = self.viewFrameWidth - PANDDING * 2;
     button.viewFrameHeight = HEIGHT;

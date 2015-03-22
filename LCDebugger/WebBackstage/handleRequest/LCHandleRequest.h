@@ -30,18 +30,15 @@
 //  IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "LCTools.h"
+#import <Foundation/Foundation.h>
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+@protocol LCHandleRequestProtocol <NSObject>
 
-@interface LCActionSheet : UIView
-
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
-
--(void) addTitle:(NSString *)title;
-
--(void) show;
+-(NSDictionary *) handleRequestPath:(NSString *)path;
 
 @end
+
+#import "LCHandleDeviceInfoRequest.h"
+#import "LCHandleMoveViewRequest.h"
+#import "LCHandleViewHighlightRequest.h"
+#import "LCHandleViewTreeRequest.h"

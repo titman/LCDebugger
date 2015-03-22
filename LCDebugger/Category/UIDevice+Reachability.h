@@ -31,17 +31,32 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LCTools.h"
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+@protocol ReachabilityWatcher <NSObject>
+- (void) reachabilityChanged;
+@end
 
-@interface LCActionSheet : UIView
 
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
+@interface UIDevice (Reachability)
++ (NSString *) stringFromAddress: (const struct sockaddr *) address;
++ (BOOL)addressFromString:(NSString *)IPAddress address:(struct sockaddr_in *)address;
 
--(void) addTitle:(NSString *)title;
++ (NSString *) hostname;
++ (NSString *) getIPAddressForHost: (NSString *) theHost;
++ (NSString *) localIPAddress;
++ (NSString *) localWiFiIPAddress;
++ (NSString *) whatismyipdotcom;
 
--(void) show;
++ (BOOL) hostAvailable: (NSString *) theHost;
++ (BOOL) networkAvailable;
++ (BOOL) activeWLAN;
++ (BOOL) activeWWAN;
++ (BOOL) performWiFiCheck;
+
++ (BOOL) scheduleReachabilityWatcher: (id) watcher;
++ (void) unscheduleReachabilityWatcher;
++ (BOOL)isJailBreak;
+
 
 @end
+

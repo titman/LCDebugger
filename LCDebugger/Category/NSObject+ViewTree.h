@@ -30,18 +30,12 @@
 //  IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "LCTools.h"
+#import <Foundation/Foundation.h>
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+@interface NSObject (ViewTree)
 
-@interface LCActionSheet : UIView
+- (NSMutableDictionary *)toDict;
 
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
-
--(void) addTitle:(NSString *)title;
-
--(void) show;
+- (void)fromDict:(NSDictionary *)dict;
 
 @end

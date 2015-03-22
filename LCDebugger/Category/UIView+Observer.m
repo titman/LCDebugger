@@ -30,18 +30,63 @@
 //  IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "LCTools.h"
+#import "UIView+Observer.h"
+#import "MethodSwizzle.h"
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+static BOOL needsRefresh;
 
-@interface LCActionSheet : UIView
+static BOOL observing;
 
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
+@implementation UIView (Observer)
 
--(void) addTitle:(NSString *)title;
++ (void)startObserving
+{
+    if (observing == NO) {
+        MethodSwizzle([UIView class], @selector(setNeedsLayout), @selector(setNeedsLayoutSwizzled));
+        MethodSwizzle([UIView class], @selector(setNeedsDisplay), @selector(setNeedsDisplaySwizzled));
+        MethodSwizzle([UIView class], @selector(setFrame:), @selector(setFrameSwizzled:));
 
--(void) show;
+        observing = YES;
+    }
+}
+
++ (void)stopObserving
+{
+    if (observing == YES) {
+        MethodSwizzle([UIView class], @selector(setNeedsLayout), @selector(setNeedsLayoutSwizzled));
+        MethodSwizzle([UIView class], @selector(setNeedsDisplay), @selector(setNeedsDisplaySwizzled));
+        MethodSwizzle([UIView class], @selector(setFrame:), @selector(setFrameSwizzled:));
+
+        observing = NO;
+    }
+}
+
++ (BOOL)needsRefresh
+{
+    return needsRefresh;
+}
+
++ (void)setNeedsRefresh:(BOOL)_needsrefresh
+{
+    needsRefresh = _needsrefresh;
+}
+
+- (void)setNeedsDisplaySwizzled
+{
+    [self setNeedsDisplaySwizzled];
+    needsRefresh = YES;
+}
+
+- (void)setNeedsLayoutSwizzled
+{
+    [self setNeedsLayoutSwizzled];
+    needsRefresh = YES;
+}
+
+- (void)setFrameSwizzled:(CGRect)frame
+{
+    [self setFrameSwizzled:frame];
+    needsRefresh = YES;
+}
 
 @end

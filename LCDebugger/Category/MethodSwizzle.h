@@ -30,18 +30,6 @@
 //  IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "LCTools.h"
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
-
-@interface LCActionSheet : UIView
-
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
-
--(void) addTitle:(NSString *)title;
-
--(void) show;
-
-@end
+void MethodSwizzle(Class aClass, SEL orig_sel, SEL alt_sel);
+void MethodSwizzleClass(Class aClass, SEL orig_sel, SEL alt_sel);

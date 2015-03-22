@@ -38,6 +38,7 @@ typedef void (^LCAssistiveTouchDidSelected) ();
 @interface LCDebuggerView : UIButton
 
 LC_PROPERTY(copy) LCAssistiveTouchDidSelected didSelected;
+LC_PROPERTY(strong) UIColor * color;
 
 -(void) addLog:(NSString *)log;
 

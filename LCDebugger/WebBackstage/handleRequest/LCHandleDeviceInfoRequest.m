@@ -30,18 +30,25 @@
 //  IN THE SOFTWARE.
 //
 
+#import "LCHandleDeviceInfoRequest.h"
 #import <UIKit/UIKit.h>
-#import "LCTools.h"
+#import "UIDevice+Reachability.h"
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+@implementation LCHandleDeviceInfoRequest
 
-@interface LCActionSheet : UIView
-
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
-
--(void) addTitle:(NSString *)title;
-
--(void) show;
+-(NSDictionary *) handleRequestPath:(NSString *)path
+{
+    NSString * username = [NSString stringWithFormat:@"%@'s %@",[UIDevice currentDevice].name,[UIDevice currentDevice].model];
+ 
+    if ([username rangeOfString:@"Simulator"].length) {
+        username = [UIDevice currentDevice].name;
+    }
+    
+    return @{
+                @"userName":username,
+                @"phoneInfo":[NSString stringWithFormat:@"%@ %@",[UIDevice currentDevice].systemVersion,[UIDevice currentDevice].systemName],
+                @"isEscape":@([UIDevice isJailBreak])
+             };
+}
 
 @end

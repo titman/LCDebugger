@@ -40,6 +40,10 @@ extern "C" NSString * NSStringFormatted( NSString * format, va_list argList )
 
 extern "C" void LCLog( NSObject * format, ... )
 {
+    if (!LCLogEnable) {
+        return;
+    }
+    
 	if ( nil == format )
 		return;
     
@@ -70,6 +74,10 @@ extern "C" void LCLog( NSObject * format, ... )
 
 extern "C" void LCInfo( NSObject * format, ... )
 {
+    if (!LCLogEnable) {
+        return;
+    }
+    
 	if (nil == format )
 		return;
     
@@ -99,6 +107,10 @@ extern "C" void LCInfo( NSObject * format, ... )
 
 extern "C" void LCError( NSString * file, const char * function , int line, NSObject * format, ... )
 {
+    if (!LCLogEnable) {
+        return;
+    }
+    
     va_list args;
 	va_start( args, format );
 	
@@ -138,6 +150,10 @@ extern "C" void LCError( NSString * file, const char * function , int line, NSOb
 
 extern "C" void LCCMDInfo( NSObject * format, ... )
 {
+    if (!LCLogEnable) {
+        return;
+    }
+    
     va_list args;
 	va_start( args, format );
 	

@@ -30,18 +30,33 @@
 //  IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "LCTools.h"
+#import "MethodSwizzle.h"
+#import <objc/objc-class.h>
 
-typedef void (^LCActionSheetDismissed) (NSInteger index);
+void MethodSwizzle(Class aClass, SEL orig_sel, SEL alt_sel)
+{
+    Method orig_method = nil, alt_method = nil;
+  
+    // First, look for the methods
+    orig_method = class_getInstanceMethod(aClass, orig_sel);
+    alt_method = class_getInstanceMethod(aClass, alt_sel);
+	
+    // If both are found, swizzle them
+    if ((orig_method != nil) && (alt_method != nil)) {
+        method_exchangeImplementations(orig_method, alt_method);
+	}
+}
 
-@interface LCActionSheet : UIView
-
-LC_PROPERTY(copy) LCActionSheetDismissed dismissedBlock;
-LC_PROPERTY(strong) NSMutableArray * titles;
-
--(void) addTitle:(NSString *)title;
-
--(void) show;
-
-@end
+void MethodSwizzleClass(Class aClass, SEL orig_sel, SEL alt_sel)
+{
+    Method orig_method = nil, alt_method = nil;
+	
+    // First, look for the methods
+    orig_method = class_getClassMethod(aClass, orig_sel);
+    alt_method = class_getClassMethod(aClass, alt_sel);
+	
+    // If both are found, swizzle them
+    if ((orig_method != nil) && (alt_method != nil)) {
+        method_exchangeImplementations(orig_method, alt_method);
+	}
+}

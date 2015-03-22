@@ -41,10 +41,10 @@ typedef NS_ENUM(NSInteger, LC_CMD_TYPE) {
 
 @optional
 +(NSString *) CMDSee:(NSString *)cmd;
-+(void) CMDAction:(NSString *)cmd;
++(NSString *) CMDAction:(NSString *)cmd;
 
 -(NSString *) CMDSee:(NSString *)cmd;
--(void) CMDAction:(NSString *)cmd;
+-(NSString *) CMDAction:(NSString *)cmd;
 
 @end
 
