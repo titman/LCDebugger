@@ -1,0 +1,128 @@
+
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <script type="text/javascript" src="tree/js/modjs.js"></script>
+    <script type="text/javascript" src="tree/js/jquery.js"></script>
+	<style>
+		body{font-family:"microsoft yahei";padding:50px}
+		h3{margin:0}
+		.clearfix:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+			}
+		.clearfix { display: inline-table; }
+		/* Hides from IE-mac \*/
+		* html .clearfix { height: 1%; }
+		.clearfix { display: block; }
+		.l{float:left}
+		.view{margin-right:50px;}
+		#cmd{height:30px;line-height:30px;width:800px;text-indent:10px;border:1px solid #000;margin-right:10px}
+		#submit{height:34px;width:80px;border:1px solid #000;color:#000;font-family:"microsoft yahei";background:#fff;				        cursor:pointer}
+		a{display:block;height:30px;line-height:30px;border:1px solid #000;color:#000;text-align:center;text-decoration:        none}
+	</style>
+</head>
+<body>
+	<div class="clearfix">
+		<div class="l view"><img src="preview.jpg" id="screenshot" /></div>
+        <div class="l info">
+        	<h3>
+            	Device:<span id="userName"></span> <br />
+                OS:<span id="phoneInfo"></span><br />
+               	<span id="isEscape">JailBreak</span>
+            </h3>
+            <p><a href="/tree/tree.html" target="_blank">View Tree</a></p>
+            <p><a id="crashreport">Crash Report</a></p>
+            <p><a id="cmdhelp">CMD Help</a></p>
+        </div>
+    </div>
+    <div class="clearfix">
+        <p class="l"><input id="cmd" placeholder="Input cmd. ( You can uput 'see help' to see the all cmd.)" /></p>
+        <p class="l"><button id="submit">submit</button></p>
+    </div>
+	<script>
+        
+        $("#crashreport").on('click',function(){
+                             
+           $.ajax({
+                     url:"/api/crashreport",
+                     type:"get",
+                     data:"[]",
+                     dataType:"json",
+                  
+                     success:function(data){},
+                     error:function(){}
+                  })
+        })
+        
+        $("#cmdhelp").on('click',function(){
+                             
+                             $.ajax({
+                                    url:"/api/cmdhelp",
+                                    type:"get",
+                                    data:"[]",
+                                    dataType:"json",
+                                    
+                                    success:function(data){},
+                                    error:function(){}
+                                    })
+                             })
+        
+        
+	var btnSub = document.getElementById("submit"),
+		inputCmd = document.getElementById("cmd"),
+		img = document.getElementById("screenshot");
+        base_url = window.location.pathname;
+        
+		btnSub.onclick = function(){
+			var sth = inputCmd.value;
+			if(sth!=''){
+				window.location.href =  base_url+'?cmd='+sth;
+			}
+			else{
+				alert("Input something first.");
+			}
+		}
+	setInterval("refreshImg()",500);
+	function refreshImg(){
+		img.setAttribute("src","preview.jpg?stamp="+Math.random())
+	}
+	
+	$(function(){
+      
+		$.ajax({
+			url:"/api/deviceinfo",
+			type:"get",
+			data:"[]",
+			dataType:"json",
+			success:function(data){
+
+               $("#userName").text(data.userName);
+               $("#phoneInfo").text(data.phoneInfo);
+               if(!data.isEscape){
+               $("#isEscape").hide()
+               }
+            },
+			error:function(){
+				alert("error")
+			}
+		})
+      
+        /*
+		$("#userName").text(json.userName);
+		$("#phoneInfo").text(json.phoneInfo);
+		if(!json.isEscape){
+			$("#isEscape").hide()
+		}
+         */
+	})
+	</script>
+</body>
+</html>

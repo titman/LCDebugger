@@ -1,0 +1,55 @@
+html,body{margin:0;padding:0;height:100%;font-family: Menlo, monospace;}
+
+h1{font-size:20px;background-color:#333;color:#fff;padding-left:5px;height:25px;}
+article{background-color:#fff;line-height: 20px;overflow-y:scroll;height:auto;position:absolute;top:25px;left:0px;right:0px;bottom: 0}
+
+
+#viewtree{width:100%;height:100%;font-size:12px;color:#444;position: relative;}
+#viewtree h1{font-size:20px;background-color:#6a60ea;color:#fff;padding-left:5px;}
+#viewtree article{}
+
+#viewtree li.viewnode{list-style-type:none;position: relative;margin-left:5px;}
+#viewtree li.viewnode:hover{background-color:#e9f1fb;}
+
+#viewtree li.viewnode a.viewinfo,
+#viewtree li.viewnode a.viewinfo:focus{margin-left:12px;text-decoration: none;color:#8c1d7e;}
+#viewtree li.viewnode a.viewinfo span.h1{color: #8c1d7e}
+#viewtree li.viewnode a.viewinfo span.h2{color: #9e4500}
+#viewtree li.viewnode a.viewinfo span.h3{color: #0229b7}
+#viewtree li.viewnode.selected{background-color:#6a60ea;color: #fff;}
+#viewtree li.viewnode.selected a.viewinfo,
+#viewtree li.viewnode.selected a.viewinfo span{color: #fff;}
+
+#viewtree ol{padding-left:20px;list-style-type:none;display:none}
+
+a.arrow{
+	background-image: url(http://imgcache.qq.com/vipstyle/global/img/bg_toolbar.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	position: absolute;
+	top:2px;
+	width: 12px;
+	height: 12px;
+	background-position: -153px -23px;
+	transform: translate(0,0) rotate(-90deg);
+	-webkit-transform: translate(0,0) rotate(-90deg);
+}
+
+#viewtree li.expanded a.arrow{-webkit-transform: translate(0,0) rotate(0deg);top: 4px;}
+#viewtree li.expanded+ol{display: block;}
+
+#console{width:100%;height:50%;font-size:12px;color:#333;position: relative;}
+#console h1{}
+#console article{left:200px;top:0;overflow-y:scroll}
+#console div.cell {width:100%;height:20px;line-height:20px;border-bottom:1px #ccc solid;color:#333;}
+#console div.cell span{margin-left:5px;}
+#console div.cell span.time{color:#aaa;}
+
+#console .container{position:absolute;top:25px;bottom:0;width:100%;}
+#systeminfo{float:left;width:200px;background-color:#eee;height:100%;}
+#systeminfo header{height:20px;line-height: 20px;background-color: #ccc}
+#systeminfo h2{font-size:16px;width:80px;float:left}
+#systeminfo span.currentvalue{width:80px;float:right;text-align:right;margin-right:10px;}
+#systeminfo div.timeline{width:200px;height:50%;margin-top:-20px;position:relative;}
+#systeminfo div.timeline div.momentblock{background-color:#aaa;width:18px;height:50px;position:absolute;bottom: 0;}
+

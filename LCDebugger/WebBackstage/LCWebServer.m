@@ -107,13 +107,24 @@ LC_PROPERTY(strong) HTTPServer * server;
 
 -(void) buildWebFolder
 {
+    NSFileManager * fileManage = [NSFileManager defaultManager];
+    
+    [fileManage removeItemAtPath:WEB_PATH error:nil];
     [self.class touchPath:WEB_PATH];
     
+    NSString * bundlePath = [[NSBundle mainBundle] pathForResource:@"web" ofType:@"bundle"];
+    
+    NSBundle * webBundle = [NSBundle bundleWithPath:bundlePath];
+    
+    NSString * indexHTMLPath = [webBundle pathForResource:@"index" ofType:@"html"];
+    NSString * treeHTMLPath = [webBundle pathForResource:@"tree" ofType:@""];
+
+    
     [[NSFileManager defaultManager] removeItemAtPath:INDEX_HTML_PATH error:nil];
-    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"] toPath:INDEX_HTML_PATH error:nil];
+    [[NSFileManager defaultManager] copyItemAtPath:indexHTMLPath toPath:INDEX_HTML_PATH error:nil];
     
     [[NSFileManager defaultManager] removeItemAtPath:[WEB_PATH stringByAppendingString:@"/tree/"] error:nil];
-    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"tree" ofType:@""] toPath:[WEB_PATH stringByAppendingString:@"/tree/"] error:nil];
+    [[NSFileManager defaultManager] copyItemAtPath:treeHTMLPath toPath:[WEB_PATH stringByAppendingString:@"/tree/"] error:nil];
 }
 
 -(NSInteger) port
