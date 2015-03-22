@@ -27,9 +27,7 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
-    [LCDebugger sharedInstance];
+    self.navigationItem.rightBarButtonItem = addButton;    
 }
 
 - (void)didReceiveMemoryWarning {

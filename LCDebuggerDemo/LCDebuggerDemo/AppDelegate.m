@@ -19,13 +19,43 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [LCCMD addClassCMD:@"application" CMDType:LC_CMD_TYPE_SEE IMPClass:[self class] CMDDescription:@"test"];
+    // You must call this to use LCDebugger.
+    [LCDebugger sharedInstance];
+    
+    
+    // To close log printf.
+    // [LCDebugger sharedInstance].logEnable = NO;
+    
+    // Do some settings.
+    // [LCDebugger sharedInstance].debuggerView.color = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+
+
+    // We can dynamically add a command.
+    // Just example.
+    [LCCMD addClassCMD:@"token" CMDType:LC_CMD_TYPE_SEE IMPClass:[self class] CMDDescription:@"See the current device token."];
+    [LCCMD addClassCMD:@"userid" CMDType:LC_CMD_TYPE_SEE IMPClass:[self class] CMDDescription:@"See the current user id."];
+
+    //
+    // You could use web browser to remote debug when you see "/Info/ ➝ Web backstage address : http://192.168.xxx.xxx:11231".
+    //
     
     return YES;
 }
 
 +(NSString *)CMDSee:(NSString *)cmd
 {
+    if ([cmd isEqualToString:@"token"]) {
+        
+        return @"Your device token";
+    }
+    
+    if ([cmd isEqualToString:@"userid"]) {
+        
+        return @"Your user id";
+    }
+    
+    
+    
     return @"我被调用！输入在屏幕上！";
 }
 
