@@ -54,9 +54,7 @@
         return @"Your user id";
     }
     
-    
-    
-    return @"我被调用！输入在屏幕上！";
+    return nil;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
