@@ -135,7 +135,7 @@
 
 - (NSInteger)getOSRevision
 {
-    return [LCUtils getSysCtl64WithSpecifier:"kern.osrevision"];
+    return (NSInteger)[LCUtils getSysCtl64WithSpecifier:"kern.osrevision"];
 }
 
 - (NSString*)getKernelInfo
@@ -145,17 +145,17 @@
 
 - (NSUInteger)getMaxVNodes
 {
-    return [LCUtils getSysCtl64WithSpecifier:"kern.maxvnodes"];
+    return (NSUInteger)[LCUtils getSysCtl64WithSpecifier:"kern.maxvnodes"];
 }
 
 - (NSUInteger)getMaxProcesses
 {
-    return [LCUtils getSysCtl64WithSpecifier:"kern.maxproc"];
+    return (NSUInteger)[LCUtils getSysCtl64WithSpecifier:"kern.maxproc"];
 }
 
 - (NSUInteger)getMaxFiles
 {
-    return [LCUtils getSysCtl64WithSpecifier:"kern.maxfiles"];
+    return (NSUInteger)[LCUtils getSysCtl64WithSpecifier:"kern.maxfiles"];
 }
 
 - (NSUInteger)getTickFrequency
@@ -168,7 +168,7 @@
 
 - (NSUInteger)getNumberOfGroups
 {
-    return [LCUtils getSysCtl64WithSpecifier:"kern.ngroups"];
+    return (NSUInteger)[LCUtils getSysCtl64WithSpecifier:"kern.ngroups"];
 }
 
 - (time_t)getBootTime

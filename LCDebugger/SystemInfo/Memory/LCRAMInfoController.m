@@ -128,7 +128,7 @@
 
 - (NSUInteger)getRAMTotal
 {
-    return [NSProcessInfo processInfo].physicalMemory;
+    return (NSUInteger)[NSProcessInfo processInfo].physicalMemory;
 }
 
 - (NSString*)getRAMType

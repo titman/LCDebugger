@@ -32,7 +32,7 @@
 
 #import "MethodSwizzle.h"
 #import <objc/runtime.h>
- 
+
 void MethodSwizzle(Class aClass, SEL orig_sel, SEL alt_sel)
 {
     Method orig_method = nil, alt_method = nil;

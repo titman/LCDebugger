@@ -549,8 +549,6 @@
 
 - (void)publishBonjour
 {
-	NSAssert(dispatch_get_current_queue() == serverQueue, @"Invalid queue");
-	
 	if (type)
 	{
 		netService = [[NSNetService alloc] initWithDomain:domain type:type name:name port:[asyncSocket localPort]];
@@ -582,8 +580,6 @@
 
 - (void)unpublishBonjour
 {
-	NSAssert(dispatch_get_current_queue() == serverQueue, @"Invalid queue");
-	
 	if (netService)
 	{
 		NSNetService *theNetService = netService;
