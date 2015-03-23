@@ -23,13 +23,13 @@ LCDebugger build a local web server for remote debugging. Use CMD module to inte
 ## Preview
 
 ### Real-time remote preview screen of device
-wait...
+ ![image](https://github.com/titman/Pictures-of-the-warehouse/blob/master/remotepreview.gif?raw=false)
 
 ### Remote preview view tree and change it!
 wait...
 
 ### Remote perform some command
-wait...
+ ![image](https://github.com/titman/Pictures-of-the-warehouse/blob/master/remotecontrol.gif?raw=false)
 
 ### 3d view tree
 wait...
