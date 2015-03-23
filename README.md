@@ -28,7 +28,7 @@ Remote debugging, and more helpful for testers.
 ### Remote preview view tree and change it!
  ![image](https://github.com/titman/Pictures-of-the-warehouse/blob/master/viewtree.gif?raw=false)
 
-### Remote perform some command
+### Remote perform some commands
  ![image](https://github.com/titman/Pictures-of-the-warehouse/blob/master/remotecontrol.gif?raw=false)
 
 ### 3d view tree
