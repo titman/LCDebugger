@@ -35,7 +35,12 @@ LCDebugger build a local web server for remote debugging. Use CMD module to inte
 wait...
 
 ## Version History
+- 1.0
 
 ## Thanks
+#### [Gavinkwoe/BeeFramework](https://github.com/gavinkwoe/BeeFramework)
+#### [rockanita](https://github.com/rockanita)
+#### [vinqon/Realtime-Debug-Portal](https://github.com/vinqon/Realtime-Debug-Portal)
 
 ## License
+
