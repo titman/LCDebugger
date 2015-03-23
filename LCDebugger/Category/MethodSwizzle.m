@@ -31,7 +31,7 @@
 //
 
 #import "MethodSwizzle.h"
-#import <objc/objc-class.h>
+#import <objc/runtime.h>
 
 void MethodSwizzle(Class aClass, SEL orig_sel, SEL alt_sel)
 {
