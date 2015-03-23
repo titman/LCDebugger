@@ -26,7 +26,7 @@ LCDebugger build a local web server for remote debugging. Use CMD module to inte
  ![image](https://github.com/titman/Pictures-of-the-warehouse/blob/master/remotepreview.gif?raw=false)
 
 ### Remote preview view tree and change it!
-wait...
+ ![image](https://github.com/titman/Pictures-of-the-warehouse/blob/master/viewtree.gif?raw=false)
 
 ### Remote perform some command
  ![image](https://github.com/titman/Pictures-of-the-warehouse/blob/master/remotecontrol.gif?raw=false)
