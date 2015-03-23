@@ -1,20 +1,20 @@
 ## LCDebugger
-LCDebugger is a local/remote debugging tool. and you could input some command as a terminal. (Don't need to jailbreak)
+LCDebugger is a local/remote debugging tools. You could input some commands like the terminal. (Don't need to jailbreak)
 
 ## What LCDebugger Does
 - Real-time remote  preview screen of device .
 - Remote control device.
-- Remote viewing view tree and change frame to one of views.
+- Remote browser view tree and change frame to one of views.
 - Command(CMD) module.
 - 3d view tree.
 - Crash report.
-- A variety of system information.
+- Various system information.
 
 ## How LCDebugger Works
-LCDebugger build a local web server for remote debugging. Use CMD module to interact.
+LCDebugger build a local web server for remote debugging, and use CMD module to interact.
 
 ## The Scenario
-Remote debug, and more helpful for testers.
+Remote debugging, and more helpful for testers.
 
 ## Getting Started
 1. Download the source code.
