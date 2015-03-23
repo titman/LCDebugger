@@ -308,7 +308,7 @@ LC_PROPERTY(copy) __LCDebuggerLogButtonDidTap didTapButton;
                     
                     [self.mainView back];
                 }
-                else{
+                else if(index <= 6){
                     
                     UITableView * tableView = [[self.tableClasses[index] alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height - 40)];
                     
