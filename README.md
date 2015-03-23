@@ -1,5 +1,5 @@
 ## LCDebugger
-LCDebugger is a local/remote debugging tools. You can input some commands like a terminal. (Without needing you to jailbreak)
+LCDebugger is a local/remote debugging tools. LCDebugger has a set of useful commands, and enables you to simply use it like using terminal. (Without needing you to jailbreak)
 
 ## What LCDebugger Does
 - Real-time remote  preview screen of device .
